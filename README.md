@@ -1,4 +1,4 @@
-# Controle de Vendas – API (Projeto Pessoal)
+# Controle de Vendas API (Projeto Pessoal)
 
 API criada para organizar vendas e kits de doces, controlar custos, registrar produtos e calcular lucro/prejuízo. O foco é ter uma base sólida para uso pessoal e estudo de C#, EF Core e arquitetura de API.
 
