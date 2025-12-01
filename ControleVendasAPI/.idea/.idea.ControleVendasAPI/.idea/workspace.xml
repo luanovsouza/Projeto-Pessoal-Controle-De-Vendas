@@ -8,18 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81a01fce-0265-4a22-9dfb-d9fdad0ed124" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ControleVendasAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ControleVendasAPI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Context/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Context/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Models/Cost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Models/Cost.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Models/Sale.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Models/Sale.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Models/SweetKit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Models/SweetKit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/rider.project.model.nuget.info" afterDir="false" />
-    </list>
+    <list default="true" id="81a01fce-0265-4a22-9dfb-d9fdad0ed124" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +91,7 @@
       <updated>1764381804880</updated>
       <workItem from="1764381810165" duration="473000" />
       <workItem from="1764382311889" duration="2797000" />
-      <workItem from="1764385246847" duration="681000" />
+      <workItem from="1764385246847" duration="766000" />
     </task>
     <task id="LOCAL-00001" summary="Criando o Projeto">
       <option name="closed" value="true" />
@@ -120,7 +109,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764384287935</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Criando o Banco de Dados">
+      <option name="closed" value="true" />
+      <created>1764385983492</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1764385983492</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,7 +129,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Criando o Projeto" />
     <MESSAGE value="Criando do contexto e da cofiguração de conexao com o DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Criando do contexto e da cofiguração de conexao com o DB" />
+    <MESSAGE value="Criando o Banco de Dados" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criando o Banco de Dados" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
