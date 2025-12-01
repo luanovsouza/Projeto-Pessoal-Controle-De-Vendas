@@ -11,5 +11,5 @@ public class AppDbContext : DbContext
     
     public DbSet<Cost> Costs { get; set; }
     public DbSet<Sale> Sales { get; set; }
-    public DbSet<SweetKit> SweetKits { get; set; }
+    public DbSet<SweetKit?> SweetKits { get; set; }
 }

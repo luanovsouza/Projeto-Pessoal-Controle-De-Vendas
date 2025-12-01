@@ -2,6 +2,7 @@
 using ControleVendasAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace ControleVendasAPI.Controllers;
 
@@ -21,25 +22,79 @@ public class SweestKitsController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<SweetKit>>> GetSweetKits()
     {
-        var kits = await _context.SweetKits.AsNoTracking().ToListAsync();
-
-        if (kits == null)
+        try
         {
-            return NotFound("Kits não encontrados!");
+            var kits = await _context.SweetKits.AsNoTracking().ToListAsync();
+
+            if (kits == null)
+            {
+                return NotFound("Kits não encontrados!");
+            }
+        
+            return Ok(kits);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError,$"Ocorreu um erro ao criar o SweetKit {e.Message}");
         }
         
-        return Ok(kits);
     }
 
-    [HttpGet("{id:min(1)}")]
+    [HttpGet("{id:min(1)}", Name = "GetSweetKit")]
     public async Task<ActionResult<SweetKit>> GetSweetKit(int id)
     {
-        var sweetKit = await _context.SweetKits.FirstOrDefaultAsync(s => s.Id == id);
-
-        if (sweetKit == null)
+        try
         {
-            return  NotFound("Não foi encontrado este Kit!");
+            var sweetKit = await _context.SweetKits.FirstOrDefaultAsync(s => s.Id == id);
+
+            if (sweetKit == null)
+            {
+                return  NotFound("Não foi encontrado este Kit!");
+            }
+        
+            return Ok(sweetKit);
         }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                $"Ocorreu um erro ao buscar o SweetKit {e.Message}");
+        }
+        
+    }
+
+    [HttpPost]
+    public async Task<ActionResult<SweetKit>> PostSweetKit(SweetKit? sweetKit)
+    {
+        try
+        {
+            if (sweetKit == null)
+            {
+                return BadRequest("Dados invalidos digite corrretamente");
+            }
+            var kitCreated = _context.SweetKits.AddAsync(sweetKit);
+            await _context.SaveChangesAsync();
+            
+            return new CreatedAtRouteResult("GetSweetKit", new { id = sweetKit.Id }, sweetKit);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                $"Ocorreu um erro ao criar o SweetKit {e.Message}");
+        }
+        
+    }
+    
+    [HttpPut("{id:min(1)}")]
+    public async Task<IActionResult> PutSweetKit(int id, SweetKit? sweetKit)
+    {
+        if (id != sweetKit.Id)
+        {
+            return BadRequest("Dados invalidos digite corrtatamente");
+        }
+        
+        _context.Entry(sweetKit).State = EntityState.Modified;
+        
+        await _context.SaveChangesAsync();
         
         return Ok(sweetKit);
     }
