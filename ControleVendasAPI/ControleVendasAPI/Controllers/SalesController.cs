@@ -38,4 +38,48 @@ public class SalesController : ControllerBase
 
         return Ok(saleById);
     }
+
+    [HttpPost]
+    public async Task<ActionResult<Sale>> PostSale(Sale? sale)
+    {
+        if (sale == null)
+        {
+            return BadRequest("Invalid data, please try again.");
+        }
+        
+        _context.Sales.Add(sale);
+        await _context.SaveChangesAsync();
+        
+        return new CreatedAtRouteResult("GetSale", new { id = sale.Id }, sale); // retorna 201
+    }
+
+    [HttpPut("{id:int:min(1)}")]
+    public async Task<ActionResult<Sale>> PutSale(int id, Sale? sale)
+    {
+        var saleById = await _context.Sales.FirstOrDefaultAsync(s => s.Id == id);
+
+        if (saleById == null)
+        {
+            return NotFound($"Sale {id} was not found.");
+        }
+
+        _context.Entry(sale).State = EntityState.Modified;
+        await _context.SaveChangesAsync();
+
+        return Ok(sale);
+    }
+
+    [HttpDelete("{id:int:min(1)}")]
+    public async Task<ActionResult<Sale>> DeleteSale(int id)
+    {
+        var saleById = await _context.Sales.FirstOrDefaultAsync(s => s.Id == id);
+        
+        if (saleById == null)
+            return  NotFound($"Sale {id} was not found.");
+        
+        _context.Sales.Remove(saleById);
+        await _context.SaveChangesAsync();
+
+        return Ok(saleById);
+    }
 }
