@@ -9,18 +9,18 @@ namespace ControleVendasAPI.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class SweestKitsController : ControllerBase
+public class SweetKitsController : ControllerBase
 {
     
     private readonly AppDbContext _context;
 
-    public SweestKitsController(AppDbContext context)
+    public SweetKitsController(AppDbContext context)
     {
         _context = context;
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<SweetKit>>> GetSweetKits()
+    public async Task<ActionResult<IEnumerable<SweetKit>>> GetKits()
     {
         try
         {
@@ -87,7 +87,7 @@ public class SweestKitsController : ControllerBase
     [HttpPut("{id:min(1)}")]
     public async Task<IActionResult> PutSweetKit(int id, SweetKit? sweetKit)
     {
-        if (id != sweetKit.Id)
+        if (sweetKit != null && id != sweetKit.Id)
         {
             return BadRequest("Dados invalidos digite corrtatamente");
         }
@@ -97,5 +97,21 @@ public class SweestKitsController : ControllerBase
         await _context.SaveChangesAsync();
         
         return Ok(sweetKit);
+    }
+
+    [HttpDelete("{id:int:min(1)}")]
+    public async Task<ActionResult<SweetKit>> DeleteSweetKit(int id)
+    {
+        var sweetKitDeleted = await _context.SweetKits.FirstOrDefaultAsync(s => s.Id == id);
+
+        if (sweetKitDeleted == null)
+        {
+            return NotFound("Kit not found :(");
+        }
+        
+        _context.SweetKits.Remove(sweetKitDeleted);
+        await _context.SaveChangesAsync();
+        
+        return Ok(sweetKitDeleted);
     }
 }

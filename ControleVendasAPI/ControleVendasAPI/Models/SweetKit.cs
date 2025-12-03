@@ -1,9 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace ControleVendasAPI.Models;
 
 public class SweetKit
 {
+    
+
     public int Id { get; set; }
     
     [Required]
