@@ -43,7 +43,6 @@ namespace ControleVendasAPI.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("ClientName")
-                        .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("TEXT");
 
@@ -78,9 +77,30 @@ namespace ControleVendasAPI.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("SaleId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("SaleId");
+
                     b.ToTable("SweetKits");
+                });
+
+            modelBuilder.Entity("ControleVendasAPI.Models.SweetKit", b =>
+                {
+                    b.HasOne("ControleVendasAPI.Models.Sale", "Sale")
+                        .WithMany("SweetKits")
+                        .HasForeignKey("SaleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Sale");
+                });
+
+            modelBuilder.Entity("ControleVendasAPI.Models.Sale", b =>
+                {
+                    b.Navigation("SweetKits");
                 });
 #pragma warning restore 612, 618
         }

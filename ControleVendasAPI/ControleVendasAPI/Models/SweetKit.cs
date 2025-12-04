@@ -6,7 +6,6 @@ namespace ControleVendasAPI.Models;
 public class SweetKit
 {
     
-
     public int Id { get; set; }
     
     [Required]
@@ -20,4 +19,9 @@ public class SweetKit
     [Required]
     [Range(5, 1000)]
     public double KitPrice { get; set; }
+    
+    //Relacionamento
+    public int SaleId { get; set; }
+    public Sale? Sale { get; set; }
+    //---------------------------------//
 }
