@@ -1,5 +1,6 @@
 ﻿using ControleVendasAPI.Context;
 using ControleVendasAPI.Models;
+using ControleVendasAPI.Models.DTOS;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 namespace ControleVendasAPI.Controllers;
@@ -16,7 +17,7 @@ public class SalesController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Sale>>> GetSales()
+    public async Task<ActionResult<IEnumerable<CreatedSaleDto>>> GetSales()
     {
         var sales = await _context.Sales.ToListAsync();
 
@@ -24,11 +25,23 @@ public class SalesController : ControllerBase
         {
             return NotFound("No sale was found!");
         }
-
-        return Ok(sales);
+        
+        var sale = _context.Sales.Include(x => x.SweetKits).ToList();
+        
+        var salesDto = sales.Select(dto => new CreatedSaleDto
+        {
+            Id = dto.Id,
+            SalesDay = dto.SalesDay,
+            ClientName = dto.ClientName,
+            Quantity = dto.Quantity,
+            SalesPrice = dto.SalesPrice,
+            SweetKitsIds = dto.SweetKits.Select(k => k.Id).ToList(), // Vou mostrar todos os IDs do SweetKits da venda
+        }).ToList();
+        
+        return Ok(salesDto);
     }
 
-    [HttpGet("{id:int:min(1)}")]
+    [HttpGet("{id:int:min(1)}", Name = "GetSale")]
     public async Task<ActionResult<Sale>> SaleById(int id)
     {
         var saleById = await _context.Sales.FirstOrDefaultAsync(s => s.Id == id);
@@ -40,17 +53,27 @@ public class SalesController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<Sale>> PostSale(Sale? sale)
+    public async Task<ActionResult<SweetKit>> PostSale(CreatedSaleDto dto)
     {
-        if (sale == null)
+        var kits = await _context.SweetKits.Where(k => 
+            dto.SweetKitsIds!.Contains(k.Id)).ToListAsync();
+
+        if (!kits.Any())
+            return NotFound("No sweet kits were found.");
+        
+        var sales = new Sale
         {
-            return BadRequest("Invalid data, please try again.");
-        }
+            SalesDay = dto.SalesDay,
+            ClientName = dto.ClientName,
+            Quantity = dto.Quantity,
+            SalesPrice = dto.SalesPrice,                    
+            SweetKits = kits!
+        };
         
-        _context.Sales.Add(sale);
+        _context.Sales.Add(sales);
         await _context.SaveChangesAsync();
-        
-        return new CreatedAtRouteResult("GetSale", new { id = sale.Id }, sale); // retorna 201
+        return new CreatedAtRouteResult("GetSale", new { id = sales.Id }, sales);
+
     }
 
     [HttpPut("{id:int:min(1)}")]

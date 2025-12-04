@@ -20,8 +20,4 @@ public class SweetKit
     [Range(5, 1000)]
     public double KitPrice { get; set; }
     
-    //Relacionamento
-    public int SaleId { get; set; }
-    public Sale? Sale { get; set; }
-    //---------------------------------//
 }

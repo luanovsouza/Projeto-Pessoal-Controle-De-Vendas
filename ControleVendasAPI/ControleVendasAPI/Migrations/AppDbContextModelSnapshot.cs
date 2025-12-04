@@ -77,7 +77,7 @@ namespace ControleVendasAPI.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("SaleId")
+                    b.Property<int?>("SaleId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
@@ -89,13 +89,9 @@ namespace ControleVendasAPI.Migrations
 
             modelBuilder.Entity("ControleVendasAPI.Models.SweetKit", b =>
                 {
-                    b.HasOne("ControleVendasAPI.Models.Sale", "Sale")
+                    b.HasOne("ControleVendasAPI.Models.Sale", null)
                         .WithMany("SweetKits")
-                        .HasForeignKey("SaleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Sale");
+                        .HasForeignKey("SaleId");
                 });
 
             modelBuilder.Entity("ControleVendasAPI.Models.Sale", b =>

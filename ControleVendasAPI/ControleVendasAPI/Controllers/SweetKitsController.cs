@@ -1,5 +1,6 @@
 ﻿using ControleVendasAPI.Context;
 using ControleVendasAPI.Models;
+using ControleVendasAPI.Models.DTOS;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -20,7 +21,7 @@ public class SweetKitsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<SweetKit>>> GetKits()
+    public async Task<ActionResult<IEnumerable<SweetKit>>> GetSweetKits()
     {
         try
         {
@@ -40,7 +41,7 @@ public class SweetKitsController : ControllerBase
         
     }
 
-    [HttpGet("{id:min(1)}", Name = "GetSweetKit")]
+    [HttpGet("{id:min(1)}", Name = "GetKit")]
     public async Task<ActionResult<SweetKit>> GetSweetKit(int id)
     {
         try
@@ -63,23 +64,28 @@ public class SweetKitsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<SweetKit>> PostSweetKit(SweetKit? sweetKit)
+    public async Task<ActionResult<SweetKit>> PostSweetKit(SweetKitDto? dto)
     {
         try
         {
-            if (sweetKit == null)
-            {
+            if (dto == null)
                 return BadRequest("Dados invalidos digite corrretamente");
-            }
-            var kitCreated = _context.SweetKits.AddAsync(sweetKit);
+            
+            var kitCreated = new SweetKit
+            {
+                Name = dto.Name,
+                Quantity = dto.Quantity,
+                KitPrice = dto.KitPrice
+            };
+            _context.SweetKits.Add(kitCreated);
             await _context.SaveChangesAsync();
             
-            return new CreatedAtRouteResult("GetSweetKit", new { id = sweetKit.Id }, sweetKit);
+            return new CreatedAtRouteResult("GetKit", new { id = kitCreated.Id }, kitCreated);
         }
         catch (Exception e)
         {
             return StatusCode(StatusCodes.Status500InternalServerError,
-                $"Ocorreu um erro ao criar o SweetKit {e.Message}");
+                $"Ocorreu um erro ao criar o SweetKit: {e.Message}");
         }
         
     }

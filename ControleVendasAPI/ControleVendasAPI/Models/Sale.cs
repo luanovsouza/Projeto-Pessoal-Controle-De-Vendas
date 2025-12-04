@@ -18,10 +18,6 @@ public class Sale
     [DataType(DataType.Date)]
     public DateTime SalesDay { get; set; }
     
-    //Relacionamento
-    public Collection<SweetKit> SweetKits { get; set; }
-    
-    //--------------------------------------------------//
     
     [StringLength(30, ErrorMessage = "O nome do cliete deve conter entre 5 a 30 caracteres", MinimumLength = 5)]
     public string? ClientName { get; set; }
@@ -33,4 +29,7 @@ public class Sale
     [Required]
     [Range(5, 1000)]
     public double SalesPrice { get; set; }
+    
+    //Relacionamento
+    public ICollection<SweetKit> SweetKits { get; set; } = new  List<SweetKit>();
 }
