@@ -8,23 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81a01fce-0265-4a22-9dfb-d9fdad0ed124" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Context/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Context/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Controllers/SweestKitsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Controllers/SweestKitsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ref/ControleVendasAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ref/ControleVendasAPI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/refint/ControleVendasAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/refint/ControleVendasAPI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/rjsmcshtml.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/rjsmcshtml.dswa.cache.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/rjsmrazor.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/rjsmrazor.dswa.cache.json" afterDir="false" />
-    </list>
+    <list default="true" id="81a01fce-0265-4a22-9dfb-d9fdad0ed124" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +19,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/gamer/Documents/Projeto Pessoal/Controle Vendas Api/ControleVendasAPI/ControleVendasAPI/Controllers/SalesController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -109,6 +96,7 @@
       <workItem from="1764382311889" duration="2797000" />
       <workItem from="1764385246847" duration="766000" />
       <workItem from="1764556203408" duration="3223000" />
+      <workItem from="1764798912398" duration="11765000" />
     </task>
     <task id="LOCAL-00001" summary="Criando o Projeto">
       <option name="closed" value="true" />
@@ -134,7 +122,39 @@
       <option name="project" value="LOCAL" />
       <updated>1764385983492</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Criando os Controladores das vendas e modificando o controlador dos Kits de Doces">
+      <option name="closed" value="true" />
+      <created>1764801031913</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1764801031913</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Terminando o Controller das Vendas">
+      <option name="closed" value="true" />
+      <created>1764806060529</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1764806060529</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Criando o Relacionamentos entre as tabelas">
+      <option name="closed" value="true" />
+      <created>1764806813076</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1764806813076</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Criação dos DTOs e mudança nos controllers da response da API">
+      <option name="closed" value="true" />
+      <created>1764819228603</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1764819228603</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +167,11 @@
     <MESSAGE value="Criando o Projeto" />
     <MESSAGE value="Criando do contexto e da cofiguração de conexao com o DB" />
     <MESSAGE value="Criando o Banco de Dados" />
-    <option name="LAST_COMMIT_MESSAGE" value="Criando o Banco de Dados" />
+    <MESSAGE value="Criando os Controladores das vendas e modificando o controlador dos Kits de Doces" />
+    <MESSAGE value="Terminando o Controller das Vendas" />
+    <MESSAGE value="Criando o Relacionamentos entre as tabelas" />
+    <MESSAGE value="Criação dos DTOs e mudança nos controllers da response da API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criação dos DTOs e mudança nos controllers da response da API" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
