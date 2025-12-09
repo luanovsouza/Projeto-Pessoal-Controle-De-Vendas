@@ -1,4 +1,5 @@
 ﻿using ControleVendasAPI.Models;
+using ControleVendasAPI.Models.DTOS;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ControleVendasAPI.Repositories.Interfaces;
@@ -9,9 +10,9 @@ public interface ISalesRepository
     
     Task<Sale> GetSaleById(int id);
     
-    Task<Sale> PostSale(Sale sale);
+    Task<Sale> PostSale(CreatedSaleDto dto);
     
-    Task<Sale> PutSale(int id, Sale sale);
+    Task<Sale> PutSale(Sale sale);
     
     Task<Sale> DeleteSale(int id);
 }

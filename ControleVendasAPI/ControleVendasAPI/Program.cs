@@ -1,4 +1,6 @@
 using ControleVendasAPI.Context;
+using ControleVendasAPI.Repositories;
+using ControleVendasAPI.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +18,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlite(connectionString);
 });
+
+builder.Services.AddScoped<ISalesRepository, SaleRepository>();
 
 var app = builder.Build();
 

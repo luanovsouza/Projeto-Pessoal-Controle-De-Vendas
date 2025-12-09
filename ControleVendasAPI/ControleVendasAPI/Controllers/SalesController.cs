@@ -1,6 +1,7 @@
 ﻿using ControleVendasAPI.Context;
 using ControleVendasAPI.Models;
 using ControleVendasAPI.Models.DTOS;
+using ControleVendasAPI.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 namespace ControleVendasAPI.Controllers;
@@ -9,24 +10,22 @@ namespace ControleVendasAPI.Controllers;
 [Route("api/[controller]")]
 public class SalesController : ControllerBase
 {
-    private readonly AppDbContext _context;
+    private readonly ISalesRepository _repository;
 
-    public SalesController(AppDbContext context)
+    public SalesController(ISalesRepository repository)
     {
-        _context = context;
+        _repository = repository;
     }
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<CreatedSaleDto>>> GetSales()
     {
-        var sales = await _context.Sales.ToListAsync();
+        var sales = await _repository.GetSales();
 
         if (sales == null)
         {
             return NotFound("No sale was found!");
         }
-        
-        var sale = _context.Sales.Include(x => x.SweetKits).ToList();
         
         var salesDto = sales.Select(dto => new CreatedSaleDto
         {
@@ -44,7 +43,7 @@ public class SalesController : ControllerBase
     [HttpGet("{id:int:min(1)}", Name = "GetSale")]
     public async Task<ActionResult<Sale>> SaleById(int id)
     {
-        var saleById = await _context.Sales.FirstOrDefaultAsync(s => s.Id == id);
+        var saleById = await _repository.GetSaleById(id);
 
         if (saleById == null)
             return NotFound("This sale was not found.");
@@ -55,53 +54,40 @@ public class SalesController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<SweetKit>> PostSale(CreatedSaleDto dto)
     {
-        var kits = await _context.SweetKits.Where(k => 
-            dto.SweetKitsIds!.Contains(k.Id)).ToListAsync();
-
-        if (!kits.Any())
-            return NotFound("No sweet kits were found.");
+        if (dto == null)
+            return BadRequest("Invalid data");
         
-        var sales = new Sale
-        {
-            SalesDay = dto.SalesDay,
-            ClientName = dto.ClientName,
-            Quantity = dto.Quantity,
-            SalesPrice = dto.SalesPrice,                    
-            SweetKits = kits!
-        };
+        var saleCreated = await _repository.PostSale(dto);
         
-        _context.Sales.Add(sales);
-        await _context.SaveChangesAsync();
-        return new CreatedAtRouteResult("GetSale", new { id = sales.Id }, sales);
+        
+        return new CreatedAtRouteResult("GetSale", new { id = saleCreated.Id }, saleCreated);
 
     }
 
     [HttpPut("{id:int:min(1)}")]
     public async Task<ActionResult<Sale>> PutSale(int id, Sale? sale)
     {
-        var saleById = await _context.Sales.FirstOrDefaultAsync(s => s.Id == id);
+        var saleById = await _repository.GetSaleById(id);
 
         if (saleById == null)
         {
             return NotFound($"Sale {id} was not found.");
         }
 
-        _context.Entry(sale).State = EntityState.Modified;
-        await _context.SaveChangesAsync();
-
+        await _repository.PutSale(saleById);
+        
         return Ok(sale);
     }
 
     [HttpDelete("{id:int:min(1)}")]
     public async Task<ActionResult<Sale>> DeleteSale(int id)
     {
-        var saleById = await _context.Sales.FirstOrDefaultAsync(s => s.Id == id);
+        var saleById = _repository.GetSaleById(id);
         
         if (saleById == null)
             return  NotFound($"Sale {id} was not found.");
         
-        _context.Sales.Remove(saleById);
-        await _context.SaveChangesAsync();
+        await _repository.DeleteSale(id);
 
         return Ok(saleById);
     }
