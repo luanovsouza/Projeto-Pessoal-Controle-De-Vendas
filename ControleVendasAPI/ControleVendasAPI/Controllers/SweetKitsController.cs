@@ -1,123 +1,96 @@
 ﻿using ControleVendasAPI.Context;
 using ControleVendasAPI.Models;
 using ControleVendasAPI.Models.DTOS;
+using ControleVendasAPI.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace ControleVendasAPI.Controllers;
 
-
 [ApiController]
 [Route("api/[controller]")]
 public class SweetKitsController : ControllerBase
 {
-    
-    private readonly AppDbContext _context;
+    private readonly IUnitOfWork _uof;
 
-    public SweetKitsController(AppDbContext context)
+    public SweetKitsController(IUnitOfWork uof)
     {
-        _context = context;
+        _uof = uof;
     }
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<SweetKit>>> GetSweetKits()
     {
-        try
-        {
-            var kits = await _context.SweetKits.AsNoTracking().ToListAsync();
+        var kits = _uof.SweetKitRepository.GetAll();
 
-            if (kits == null)
-            {
-                return NotFound("Kits não encontrados!");
-            }
-        
-            return Ok(kits);
-        }
-        catch (Exception e)
+        if (kits == null)
         {
-            return StatusCode(StatusCodes.Status500InternalServerError,$"Ocorreu um erro ao criar o SweetKit {e.Message}");
+            return NotFound("Kits não encontrados!");
         }
-        
+
+        return Ok(kits);
     }
 
     [HttpGet("{id:min(1)}", Name = "GetKit")]
-    public async Task<ActionResult<SweetKit>> GetSweetKit(int id)
+    public ActionResult<SweetKit> GetSweetKit(int id)
     {
-        try
-        {
-            var sweetKit = await _context.SweetKits.FirstOrDefaultAsync(s => s.Id == id);
+        var sweetKit = _uof.SweetKitRepository.GetById(s => s.Id == id);
 
-            if (sweetKit == null)
-            {
-                return  NotFound("Não foi encontrado este Kit!");
-            }
-        
-            return Ok(sweetKit);
-        }
-        catch (Exception e)
+        if (sweetKit == null)
         {
-            return StatusCode(StatusCodes.Status500InternalServerError,
-                $"Ocorreu um erro ao buscar o SweetKit {e.Message}");
+            return NotFound("Não foi encontrado este Kit!");
         }
-        
+
+        return Ok(sweetKit);
     }
 
     [HttpPost]
-    public async Task<ActionResult<SweetKit>> PostSweetKit(SweetKitDto? dto)
+    public ActionResult<SweetKit> PostSweetKit(SweetKitDto? dto)
     {
-        try
+        if (dto == null)
+            return BadRequest("Dados invalidos digite corrretamente");
+
+        var kitCreated = new SweetKit
         {
-            if (dto == null)
-                return BadRequest("Dados invalidos digite corrretamente");
-            
-            var kitCreated = new SweetKit
-            {
-                Name = dto.Name,
-                Quantity = dto.Quantity,
-                KitPrice = dto.KitPrice
-            };
-            _context.SweetKits.Add(kitCreated);
-            await _context.SaveChangesAsync();
-            
-            return new CreatedAtRouteResult("GetKit", new { id = kitCreated.Id }, kitCreated);
-        }
-        catch (Exception e)
-        {
-            return StatusCode(StatusCodes.Status500InternalServerError,
-                $"Ocorreu um erro ao criar o SweetKit: {e.Message}");
-        }
+            Name = dto.Name,
+            Quantity = dto.Quantity,
+            KitPrice = dto.KitPrice
+        };
         
+        _uof.SweetKitRepository.Create(kitCreated); 
+        _uof.Commit();   
+
+        return new CreatedAtRouteResult("GetKit", new { id = kitCreated.Id }, kitCreated);
     }
-    
+
     [HttpPut("{id:min(1)}")]
-    public async Task<IActionResult> PutSweetKit(int id, SweetKit? sweetKit)
+    public IActionResult PutSweetKit(int id, SweetKit? sweetKit)
     {
         if (sweetKit != null && id != sweetKit.Id)
         {
             return BadRequest("Dados invalidos digite corrtatamente");
         }
-        
-        _context.Entry(sweetKit).State = EntityState.Modified;
-        
-        await _context.SaveChangesAsync();
-        
+
+        _uof.SweetKitRepository.Update(sweetKit);
+        _uof.Commit();
+
         return Ok(sweetKit);
     }
 
     [HttpDelete("{id:int:min(1)}")]
-    public async Task<ActionResult<SweetKit>> DeleteSweetKit(int id)
+    public ActionResult<SweetKit> DeleteSweetKit(int id)
     {
-        var sweetKitDeleted = await _context.SweetKits.FirstOrDefaultAsync(s => s.Id == id);
+        var sweetKitDeleted = _uof.SweetKitRepository.GetById(s => s.Id == id);
 
         if (sweetKitDeleted == null)
         {
             return NotFound("Kit not found :(");
         }
-        
-        _context.SweetKits.Remove(sweetKitDeleted);
-        await _context.SaveChangesAsync();
-        
+
+        _uof.SweetKitRepository.Delete(sweetKitDeleted);
+        _uof.Commit();
+
         return Ok(sweetKitDeleted);
     }
 }

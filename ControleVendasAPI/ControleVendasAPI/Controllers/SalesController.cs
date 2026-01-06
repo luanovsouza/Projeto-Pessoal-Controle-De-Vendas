@@ -41,7 +41,7 @@ public class SalesController : ControllerBase
     }
 
     [HttpGet("{id:int:min(1)}", Name = "GetSale")]
-    public async Task<ActionResult<Sale>> SaleById(int id)
+    public ActionResult<Sale> SaleById(int id)
     {
         var saleById = _uof.SalesRepository.GetById(c => c.Id == id);
 
@@ -52,7 +52,7 @@ public class SalesController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<SweetKit>> PostSale(Sale sale)
+    public ActionResult<SweetKit> PostSale(Sale sale)
     {
         if (sale == null)
             return BadRequest("Invalid data");
@@ -65,7 +65,7 @@ public class SalesController : ControllerBase
     }
 
     [HttpPut("{id:int:min(1)}")]
-    public async Task<ActionResult<Sale>> PutSale(int id, Sale? sale)
+    public ActionResult<Sale> PutSale(int id, Sale? sale)
     {
         var saleById = _uof.SalesRepository.GetById(c => c.Id == id);;
 
@@ -81,7 +81,7 @@ public class SalesController : ControllerBase
     }
 
     [HttpDelete("{id:int:min(1)}")]
-    public async Task<ActionResult<Sale>> DeleteSale(int id)
+    public ActionResult<Sale> DeleteSale(int id)
     {
         var saleById = _uof.SalesRepository.GetById(c => c.Id == id);
         
