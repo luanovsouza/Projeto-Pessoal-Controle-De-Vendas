@@ -10,17 +10,17 @@ namespace ControleVendasAPI.Controllers;
 [Route("api/[controller]")]
 public class SalesController : ControllerBase
 {
-    private readonly ISalesRepository _repository;
+    private readonly IUnitOfWork _uof;
 
-    public SalesController(ISalesRepository repository)
+    public SalesController(IUnitOfWork uof)
     {
-        _repository = repository;
+        _uof = uof;
     }
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<CreatedSaleDto>>> GetSales()
     {
-        var sales = await _repository.GetSales();
+        var sales = _uof.SalesRepository.GetAll();
 
         if (sales == null)
         {
@@ -43,7 +43,7 @@ public class SalesController : ControllerBase
     [HttpGet("{id:int:min(1)}", Name = "GetSale")]
     public async Task<ActionResult<Sale>> SaleById(int id)
     {
-        var saleById = await _repository.GetSaleById(id);
+        var saleById = _uof.SalesRepository.GetById(c => c.Id == id);
 
         if (saleById == null)
             return NotFound("This sale was not found.");
@@ -52,13 +52,13 @@ public class SalesController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<SweetKit>> PostSale(CreatedSaleDto dto)
+    public async Task<ActionResult<SweetKit>> PostSale(Sale sale)
     {
-        if (dto == null)
+        if (sale == null)
             return BadRequest("Invalid data");
         
-        var saleCreated = await _repository.PostSale(dto);
-        
+        var saleCreated = _uof.SalesRepository.Create(sale);
+        _uof.Commit();
         
         return new CreatedAtRouteResult("GetSale", new { id = saleCreated.Id }, saleCreated);
 
@@ -67,14 +67,15 @@ public class SalesController : ControllerBase
     [HttpPut("{id:int:min(1)}")]
     public async Task<ActionResult<Sale>> PutSale(int id, Sale? sale)
     {
-        var saleById = await _repository.GetSaleById(id);
+        var saleById = _uof.SalesRepository.GetById(c => c.Id == id);;
 
         if (saleById == null)
         {
             return NotFound($"Sale {id} was not found.");
         }
-
-        await _repository.PutSale(saleById);
+        
+        _uof.SalesRepository.Update(saleById);
+        _uof.Commit();
         
         return Ok(sale);
     }
@@ -82,12 +83,13 @@ public class SalesController : ControllerBase
     [HttpDelete("{id:int:min(1)}")]
     public async Task<ActionResult<Sale>> DeleteSale(int id)
     {
-        var saleById = _repository.GetSaleById(id);
+        var saleById = _uof.SalesRepository.GetById(c => c.Id == id);
         
         if (saleById == null)
             return  NotFound($"Sale {id} was not found.");
         
-        await _repository.DeleteSale(id);
+        _uof.SalesRepository.Delete(saleById);
+        _uof.Commit();
 
         return Ok(saleById);
     }

@@ -20,6 +20,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 
 builder.Services.AddScoped<ISalesRepository, SaleRepository>();
+builder.Services.AddScoped<ISweetKitRepository, SweetKitRepository>();
+builder.Services.AddScoped(typeof(IRepository<>), (typeof(Repository<>)));
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 

@@ -8,7 +8,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81a01fce-0265-4a22-9dfb-d9fdad0ed124" name="Changes" comment="" />
+    <list default="true" id="81a01fce-0265-4a22-9dfb-d9fdad0ed124" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ControleVendasAPI/Repositories/Interfaces/IRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ControleVendasAPI/Repositories/Repository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ControleVendasAPI/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ControleVendasAPI/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ControleVendasAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ControleVendasAPI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Repositories/Interfaces/ISalesRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Repositories/Interfaces/ISalesRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Repositories/Interfaces/ISweetKitRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Repositories/Interfaces/ISweetKitRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Repositories/SaleRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Repositories/SaleRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Repositories/SweetKitRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Repositories/SweetKitRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfoInputs.cache" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,6 +109,9 @@
       <workItem from="1764385246847" duration="766000" />
       <workItem from="1764556203408" duration="3223000" />
       <workItem from="1764798912398" duration="11765000" />
+      <workItem from="1765236015399" duration="6890000" />
+      <workItem from="1765924635278" duration="254000" />
+      <workItem from="1765924938222" duration="2637000" />
     </task>
     <task id="LOCAL-00001" summary="Criando o Projeto">
       <option name="closed" value="true" />
