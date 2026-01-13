@@ -154,3 +154,5 @@ C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\C
 C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\obj\Debug\net9.0\ControleVendasAPI.pdb
 C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\obj\Debug\net9.0\ControleVendasAPI.genruntimeconfig.cache
 C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\obj\Debug\net9.0\ref\ControleVendasAPI.dll
+C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\bin\Debug\net9.0\AutoMapper.dll
+C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Text.Json.Serialization;
 using Microsoft.VisualBasic;
 
 namespace ControleVendasAPI.Models.DTOS;
@@ -7,6 +8,7 @@ public class SaleDto
 {
     public int Id { get; set; }
     public DateTime SalesDay { get; set; }
+    [JsonIgnore]
     public string? ClientName { get; set; }
     public int Quantity { get; set; }
     public double SalesPrice { get; set; }
