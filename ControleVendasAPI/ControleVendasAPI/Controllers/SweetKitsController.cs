@@ -1,4 +1,6 @@
-﻿using ControleVendasAPI.Context;
+﻿using AutoMapper;
+using ControleVendasAPI.Context;
+using ControleVendasAPI.DTOS;
 using ControleVendasAPI.Models;
 using ControleVendasAPI.Models.DTOS;
 using ControleVendasAPI.Repositories.Interfaces;
@@ -13,14 +15,16 @@ namespace ControleVendasAPI.Controllers;
 public class SweetKitsController : ControllerBase
 {
     private readonly IUnitOfWork _uof;
+    private readonly IMapper _mapper;
 
-    public SweetKitsController(IUnitOfWork uof)
+    public SweetKitsController(IUnitOfWork uof, IMapper mapper)
     {
         _uof = uof;
+        _mapper = mapper;
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<SweetKit>>> GetSweetKits()
+    public ActionResult<IEnumerable<SweetKitDto>> GetSweetKits()
     {
         var kits = _uof.SweetKitRepository.GetAll();
 
@@ -28,12 +32,13 @@ public class SweetKitsController : ControllerBase
         {
             return NotFound("Kits não encontrados!");
         }
-
-        return Ok(kits);
+        
+        var kitDto = _mapper.Map<IEnumerable<SweetKitDto>>(kits);
+        return Ok(kitDto);
     }
 
     [HttpGet("{id:min(1)}", Name = "GetKit")]
-    public ActionResult<SweetKit> GetSweetKit(int id)
+    public ActionResult<SweetKitDto> GetSweetKit(int id)
     {
         var sweetKit = _uof.SweetKitRepository.GetById(s => s.Id == id);
 
@@ -41,45 +46,48 @@ public class SweetKitsController : ControllerBase
         {
             return NotFound("Não foi encontrado este Kit!");
         }
-
-        return Ok(sweetKit);
+        
+        var kitDto = _mapper.Map<SweetKitDto>(sweetKit);
+        
+        return Ok(kitDto);
     }
 
     [HttpPost]
-    public ActionResult<SweetKit> PostSweetKit(SweetKitDto? dto)
+    public async Task<ActionResult<SweetKitDto>> PostSweetKit(SweetKitDto? sweetKitDto)
     {
-        if (dto == null)
+        if (sweetKitDto == null)
             return BadRequest("Dados invalidos digite corrretamente");
-
-        var kitCreated = new SweetKit
-        {
-            Name = dto.Name,
-            Quantity = dto.Quantity,
-            KitPrice = dto.KitPrice
-        };
+        
+        var kitCreated = _mapper.Map<SweetKit>(sweetKitDto);
         
         _uof.SweetKitRepository.Create(kitCreated); 
-        _uof.Commit();   
+        await _uof.Commit();   
+        
+        var kitDto = _mapper.Map<SweetKitDto>(kitCreated);
 
-        return new CreatedAtRouteResult("GetKit", new { id = kitCreated.Id }, kitCreated);
+        return new CreatedAtRouteResult("GetKit", new { id = kitDto.Id }, kitDto);
     }
 
     [HttpPut("{id:min(1)}")]
-    public IActionResult PutSweetKit(int id, SweetKit? sweetKit)
+    public async Task<ActionResult<SweetKitDto>> PutSweetKit(int id, SweetKitDto? sweetKitDto)
     {
-        if (sweetKit != null && id != sweetKit.Id)
+        if (sweetKitDto != null && id != sweetKitDto.Id)
         {
             return BadRequest("Dados invalidos digite corrtatamente");
         }
+        
+        var sweetKit = _mapper.Map<SweetKit>(sweetKitDto);
 
         _uof.SweetKitRepository.Update(sweetKit);
-        _uof.Commit();
+        await _uof.Commit();
+        
+        var sweekitUpdatedDto = _mapper.Map<SweetKitDto>(sweetKit);
 
-        return Ok(sweetKit);
+        return Ok(sweekitUpdatedDto);
     }
 
     [HttpDelete("{id:int:min(1)}")]
-    public ActionResult<SweetKit> DeleteSweetKit(int id)
+    public async Task<ActionResult<SweetKitDto>> DeleteSweetKit(int id)
     {
         var sweetKitDeleted = _uof.SweetKitRepository.GetById(s => s.Id == id);
 
@@ -89,8 +97,10 @@ public class SweetKitsController : ControllerBase
         }
 
         _uof.SweetKitRepository.Delete(sweetKitDeleted);
-        _uof.Commit();
+        await _uof.Commit();
 
-        return Ok(sweetKitDeleted);
+        var sweekitDeletedDto = _mapper.Map<SweetKitDto>(sweetKitDeleted);
+
+        return Ok(sweekitDeletedDto);
     }
 }

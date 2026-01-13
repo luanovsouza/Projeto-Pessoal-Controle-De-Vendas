@@ -1,4 +1,6 @@
 using ControleVendasAPI.Context;
+using ControleVendasAPI.DTOS.Mapping;
+using ControleVendasAPI.Models.DTOS;
 using ControleVendasAPI.Repositories;
 using ControleVendasAPI.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +25,9 @@ builder.Services.AddScoped<ISalesRepository, SaleRepository>();
 builder.Services.AddScoped<ISweetKitRepository, SweetKitRepository>();
 builder.Services.AddScoped(typeof(IRepository<>), (typeof(Repository<>)));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+builder.Services.AddAutoMapper(typeof(SalesDtoMapping));
+builder.Services.AddAutoMapper(typeof(SweetKitDtoMapping));
 
 var app = builder.Build();
 

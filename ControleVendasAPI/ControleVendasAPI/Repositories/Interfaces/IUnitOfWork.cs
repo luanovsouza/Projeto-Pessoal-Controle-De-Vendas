@@ -6,5 +6,5 @@ public interface IUnitOfWork
 {
     ISalesRepository SalesRepository { get; }
     ISweetKitRepository SweetKitRepository { get; }
-    void Commit();
+    Task Commit();
 }

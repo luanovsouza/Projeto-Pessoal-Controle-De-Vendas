@@ -3,7 +3,7 @@ using Microsoft.VisualBasic;
 
 namespace ControleVendasAPI.Models.DTOS;
 
-public class CreatedSaleDto
+public class SaleDto
 {
     public int Id { get; set; }
     public DateTime SalesDay { get; set; }

@@ -1,4 +1,5 @@
-﻿using ControleVendasAPI.Context;
+﻿using AutoMapper;
+using ControleVendasAPI.Context;
 using ControleVendasAPI.Models;
 using ControleVendasAPI.Models.DTOS;
 using ControleVendasAPI.Repositories.Interfaces;
@@ -11,14 +12,16 @@ namespace ControleVendasAPI.Controllers;
 public class SalesController : ControllerBase
 {
     private readonly IUnitOfWork _uof;
+    private readonly IMapper _mapper;
 
-    public SalesController(IUnitOfWork uof)
+    public SalesController(IUnitOfWork uof, IMapper mapper)
     {
         _uof = uof;
+        _mapper = mapper;
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<CreatedSaleDto>>> GetSales()
+    public ActionResult<IEnumerable<SaleDto>> GetSales()
     {
         var sales = _uof.SalesRepository.GetAll();
 
@@ -27,15 +30,7 @@ public class SalesController : ControllerBase
             return NotFound("No sale was found!");
         }
         
-        var salesDto = sales.Select(dto => new CreatedSaleDto
-        {
-            Id = dto.Id,
-            SalesDay = dto.SalesDay,
-            ClientName = dto.ClientName,
-            Quantity = dto.Quantity,
-            SalesPrice = dto.SalesPrice,
-            SweetKitsIds = dto.SweetKits.Select(k => k.Id).ToList(), // Vou mostrar todos os IDs do SweetKits da venda
-        }).ToList();
+        var salesDto = _mapper.Map<IEnumerable<SaleDto>>(sales);
         
         return Ok(salesDto);
     }
@@ -47,25 +42,30 @@ public class SalesController : ControllerBase
 
         if (saleById == null)
             return NotFound("This sale was not found.");
+        
+        var saleByIdDto = _mapper.Map<SaleDto>(saleById);
 
-        return Ok(saleById);
+        return Ok(saleByIdDto);
     }
 
     [HttpPost]
-    public ActionResult<SweetKit> PostSale(Sale sale)
+    public async Task<ActionResult<SaleDto>> PostSale(SaleDto? saleDto)
     {
-        if (sale == null)
+        if (saleDto == null)
             return BadRequest("Invalid data");
         
-        var saleCreated = _uof.SalesRepository.Create(sale);
-        _uof.Commit();
+        var sale = _mapper.Map<Sale>(saleDto);
         
-        return new CreatedAtRouteResult("GetSale", new { id = saleCreated.Id }, saleCreated);
-
+        var saleCreated = _uof.SalesRepository.Create(sale);
+        await _uof.Commit();
+        
+        var saleDtoCreated = _mapper.Map<SaleDto>(saleCreated);
+        
+        return new CreatedAtRouteResult("GetSale", new { id = saleDtoCreated.Id }, saleDtoCreated);
     }
 
     [HttpPut("{id:int:min(1)}")]
-    public ActionResult<Sale> PutSale(int id, Sale? sale)
+    public async Task<ActionResult<Sale>> PutSale(int id, SaleDto? saleDto)
     {
         var saleById = _uof.SalesRepository.GetById(c => c.Id == id);;
 
@@ -74,14 +74,18 @@ public class SalesController : ControllerBase
             return NotFound($"Sale {id} was not found.");
         }
         
-        _uof.SalesRepository.Update(saleById);
-        _uof.Commit();
+        var sale = _mapper.Map<Sale>(saleDto);
         
-        return Ok(sale);
+        _uof.SalesRepository.Update(saleById);
+        await _uof.Commit();
+        
+        var saleDtoUpdated = _mapper.Map<SaleDto>(sale);
+        
+        return Ok(saleDtoUpdated);
     }
 
     [HttpDelete("{id:int:min(1)}")]
-    public ActionResult<Sale> DeleteSale(int id)
+    public async Task<ActionResult<Sale>> DeleteSale(int id)
     {
         var saleById = _uof.SalesRepository.GetById(c => c.Id == id);
         
@@ -89,8 +93,10 @@ public class SalesController : ControllerBase
             return  NotFound($"Sale {id} was not found.");
         
         _uof.SalesRepository.Delete(saleById);
-        _uof.Commit();
+        await _uof.Commit();
+        
+        var saleDeletedDto = _mapper.Map<SaleDto>(saleById);
 
-        return Ok(saleById);
+        return Ok(saleDeletedDto);
     }
 }
