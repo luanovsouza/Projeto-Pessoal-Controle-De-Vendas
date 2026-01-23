@@ -15,6 +15,8 @@ public class SweetKit
     [Required]
     [Range(1, 1000)]
     public int Quantity { get; set; }
+
+    public double CustoUnitario { get; set; }
     
     [Required]
     [Range(5, 1000)]

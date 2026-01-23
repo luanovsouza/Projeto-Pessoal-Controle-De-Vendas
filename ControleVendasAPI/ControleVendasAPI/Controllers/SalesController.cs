@@ -25,17 +25,20 @@ public class SalesController : ControllerBase
     public ActionResult<IEnumerable<SaleDto>> GetSales()
     {
         var sales = _uof.SalesRepository.GetAll();
-
-        if (sales == null)
-        {
-            return NotFound("No sale was found!");
-        }
+        
         
         var salesDto = _mapper.Map<IEnumerable<SaleDto>>(sales);
         
         return Ok(salesDto);
     }
 
+    // [HttpGet("/api/Relatorio")]
+    // public ActionResult GetRelatorio(DateTime data)
+    // {
+    //     
+    // }
+    
+    
     [HttpGet("/api/SalesPagination")]
     public ActionResult<IEnumerable<SaleDto>> GetSalesPagination([FromQuery] SalesParameters saleParameters)
     {

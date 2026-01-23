@@ -30,6 +30,14 @@ public class Sale
     [Range(5, 1000)]
     public double SalesPrice { get; set; }
     
+    [Required]
+    public double SalePriceUnit { get; set; }
+    
+    //Financeiro
+    public double Custo { get; set; }
+    public double Faturamento { get; set; }
+    public double Lucro { get; set; }
+    
     //Relacionamento
     public ICollection<SweetKit> SweetKits { get; set; } = new  List<SweetKit>();
 }
