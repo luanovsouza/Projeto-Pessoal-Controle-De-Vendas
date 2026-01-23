@@ -1,6 +1,5 @@
 using ControleVendasAPI.Context;
 using ControleVendasAPI.DTOS.Mapping;
-using ControleVendasAPI.Models.DTOS;
 using ControleVendasAPI.Repositories;
 using ControleVendasAPI.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;

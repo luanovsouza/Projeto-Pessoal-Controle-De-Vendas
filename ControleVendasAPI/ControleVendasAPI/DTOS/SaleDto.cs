@@ -1,8 +1,6 @@
-﻿using System.Collections.ObjectModel;
-using System.Text.Json.Serialization;
-using Microsoft.VisualBasic;
+﻿using System.Text.Json.Serialization;
 
-namespace ControleVendasAPI.Models.DTOS;
+namespace ControleVendasAPI.DTOS;
 
 public class SaleDto
 {

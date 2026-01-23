@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using ControleVendasAPI.Models;
-using ControleVendasAPI.Models.DTOS;
 
 namespace ControleVendasAPI.DTOS.Mapping;
 

@@ -2,7 +2,6 @@
 using ControleVendasAPI.Context;
 using ControleVendasAPI.DTOS;
 using ControleVendasAPI.Models;
-using ControleVendasAPI.Models.DTOS;
 using ControleVendasAPI.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

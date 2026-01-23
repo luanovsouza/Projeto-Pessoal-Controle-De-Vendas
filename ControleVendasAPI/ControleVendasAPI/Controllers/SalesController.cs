@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using ControleVendasAPI.Context;
+using ControleVendasAPI.DTOS;
 using ControleVendasAPI.Models;
-using ControleVendasAPI.Models.DTOS;
+using ControleVendasAPI.Pagination;
 using ControleVendasAPI.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -28,6 +29,31 @@ public class SalesController : ControllerBase
         if (sales == null)
         {
             return NotFound("No sale was found!");
+        }
+        
+        var salesDto = _mapper.Map<IEnumerable<SaleDto>>(sales);
+        
+        return Ok(salesDto);
+    }
+
+    [HttpGet("/api/SalesPagination")]
+    public ActionResult<IEnumerable<SaleDto>> GetSalesPagination([FromQuery] SalesParameters saleParameters)
+    {
+        var sales = _uof.SalesRepository.GetSales(saleParameters);
+
+        var metaData = new
+        {
+            sales.TotalCount,
+            sales.PageSize,
+            sales.CurrentPage,
+            sales.TotalPages,
+            sales.HasPrevious,
+            sales.HasNext
+        };
+        
+        if (sales.CurrentPage > sales.TotalPages)
+        {
+            return BadRequest("A lista esta vazia, não tem nada aqui!");
         }
         
         var salesDto = _mapper.Map<IEnumerable<SaleDto>>(sales);
