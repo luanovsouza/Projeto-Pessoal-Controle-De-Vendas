@@ -5,7 +5,7 @@ EXPOSE 8080
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY . .
-RUN dotnet restore
+RUN dotnet restore ControleVendasAPI/ControleVendasAPI/ControleVendasAPI.csproj
 RUN dotnet publish ControleVendasAPI/ControleVendasAPI/ControleVendasAPI.csproj -c Release -o /app/publish
 
 FROM base AS final
