@@ -31,11 +31,11 @@ builder.Services.AddAutoMapper(typeof(SweetKitDtoMapping));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-    app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json", "Api Vendas"));
-}
+
+app.MapOpenApi();
+
+app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json", "Api Vendas"));
+
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
