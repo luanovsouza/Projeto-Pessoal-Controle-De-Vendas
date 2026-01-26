@@ -8,32 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81a01fce-0265-4a22-9dfb-d9fdad0ed124" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ControleVendasAPI/Services/RelatorioFinanceiroDtoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Context/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Context/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/ControleVendas.db" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/ControleVendas.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/ControleVendasAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/ControleVendasAPI.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Controllers/SalesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Controllers/SalesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/DTOS/SaleDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/DTOS/SaleDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Models/Cost.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Models/Sale.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Models/Sale.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Models/SweetKit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Models/SweetKit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ref/ControleVendasAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ref/ControleVendasAPI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/refint/ControleVendasAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/refint/ControleVendasAPI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/rjsmcshtml.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/rjsmcshtml.dswa.cache.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/rjsmrazor.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/rjsmrazor.dswa.cache.json" afterDir="false" />
-    </list>
+    <list default="true" id="81a01fce-0265-4a22-9dfb-d9fdad0ed124" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,6 +109,7 @@
       <workItem from="1768261391006" duration="507000" />
       <workItem from="1768262030113" duration="3392000" />
       <workItem from="1769126742357" duration="4885000" />
+      <workItem from="1769200478424" duration="903000" />
     </task>
     <task id="LOCAL-00001" summary="Criando o Projeto">
       <option name="closed" value="true" />
@@ -223,7 +199,23 @@
       <option name="project" value="LOCAL" />
       <updated>1769127913562</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Adiciondo servicos de relatorio financeiro">
+      <option name="closed" value="true" />
+      <created>1769200644292</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1769200644292</updated>
+    </task>
+    <task id="LOCAL-00013">
+      <option name="closed" value="true" />
+      <created>1769200690234</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1769200690234</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,7 +236,8 @@
     <MESSAGE value="Criando o AutoMapper para os modelos, e retornando os Dtos nos controller" />
     <MESSAGE value="Atualizando o dto de vendas, retirando o nome do cliente" />
     <MESSAGE value="Adicionando a Paginação" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionando a Paginação" />
+    <MESSAGE value="Adiciondo servicos de relatorio financeiro" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adiciondo servicos de relatorio financeiro" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
