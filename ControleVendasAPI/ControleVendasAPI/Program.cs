@@ -2,6 +2,8 @@ using ControleVendasAPI.Context;
 using ControleVendasAPI.DTOS.Mapping;
 using ControleVendasAPI.Repositories;
 using ControleVendasAPI.Repositories.Interfaces;
+using ControleVendasAPI.Services;
+using ControleVendasAPI.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,10 +22,14 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(connectionString);
 });
 
+//Repositorios
 builder.Services.AddScoped<ISalesRepository, SaleRepository>();
 builder.Services.AddScoped<ISweetKitRepository, SweetKitRepository>();
 builder.Services.AddScoped(typeof(IRepository<>), (typeof(Repository<>)));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+//Serviços
+builder.Services.AddScoped<IRelatorioFinanceiroDto, RelatorioFinanceiroDtoService>();
 
 builder.Services.AddAutoMapper(typeof(SalesDtoMapping));
 builder.Services.AddAutoMapper(typeof(SweetKitDtoMapping));
