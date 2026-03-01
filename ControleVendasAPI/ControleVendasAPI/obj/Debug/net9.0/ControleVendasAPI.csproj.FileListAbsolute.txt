@@ -156,3 +156,16 @@ C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\C
 C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\obj\Debug\net9.0\ref\ControleVendasAPI.dll
 C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\bin\Debug\net9.0\AutoMapper.dll
 C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\gamer\Documents\Projeto Pessoal\Controle Vendas Api\ControleVendasAPI\ControleVendasAPI\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll

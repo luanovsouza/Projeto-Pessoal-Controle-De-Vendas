@@ -5,6 +5,7 @@ using ControleVendasAPI.Models;
 using ControleVendasAPI.Pagination;
 using ControleVendasAPI.Repositories.Interfaces;
 using ControleVendasAPI.StaticClasses;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,6 +13,7 @@ namespace ControleVendasAPI.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+//[Authorize]
 public class SalesController : ControllerBase
 {
     private readonly IUnitOfWork _uof;

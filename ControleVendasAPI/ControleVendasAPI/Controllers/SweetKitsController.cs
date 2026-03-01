@@ -3,6 +3,7 @@ using ControleVendasAPI.Context;
 using ControleVendasAPI.DTOS;
 using ControleVendasAPI.Models;
 using ControleVendasAPI.Repositories.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -11,6 +12,7 @@ namespace ControleVendasAPI.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class SweetKitsController : ControllerBase
 {
     private readonly IUnitOfWork _uof;
@@ -56,7 +58,7 @@ public class SweetKitsController : ControllerBase
     {
         if (sweetKitDto == null)
             return BadRequest("Dados invalidos digite corrretamente");
-        
+         
         var kitCreated = _mapper.Map<SweetKit>(sweetKitDto);
         
         _uof.SweetKitRepository.Create(kitCreated); 

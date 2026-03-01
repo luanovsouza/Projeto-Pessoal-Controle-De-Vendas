@@ -1,6 +1,7 @@
 ﻿using ControleVendasAPI.Context;
 using ControleVendasAPI.Repositories.Interfaces;
 using ControleVendasAPI.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +10,7 @@ namespace ControleVendasAPI.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class RelatorioFinanceiroController : ControllerBase
 {
     
