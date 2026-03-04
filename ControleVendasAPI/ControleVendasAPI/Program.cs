@@ -1,5 +1,6 @@
 using ControleVendasAPI.Context;
 using ControleVendasAPI.DTOS.Mapping;
+using ControleVendasAPI.Models;
 using ControleVendasAPI.Repositories;
 using ControleVendasAPI.Repositories.Interfaces;
 using ControleVendasAPI.Services;
@@ -32,7 +33,7 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 //Serviços
 builder.Services.AddScoped<IRelatorioFinanceiroDto, RelatorioFinanceiroDtoService>();
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>()
+builder.Services.AddIdentity<UserToken, IdentityRole>().AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();//Provedor de token padrao pra criar operaçoes relacionadas a autenticação
 
 

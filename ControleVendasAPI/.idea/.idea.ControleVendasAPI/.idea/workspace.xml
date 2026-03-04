@@ -9,55 +9,170 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81a01fce-0265-4a22-9dfb-d9fdad0ed124" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ControleVendasAPI/Controllers/AuthController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ControleVendasAPI/DTOS/LoginDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ControleVendasAPI/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ControleVendasAPI/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ControleVendasAPI/DTOS/TokenUserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ControleVendasAPI/.idea/dataSources/04a09f50-ee18-48cf-9ef7-75f283f8d1ab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ControleVendasAPI/.idea/dataSources/04a09f50-ee18-48cf-9ef7-75f283f8d1ab.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ControleVendasAPI/.idea/dataSources/d75e1fa8-a95e-4d72-94fe-07bbf066dffd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ControleVendasAPI/.idea/dataSources/d75e1fa8-a95e-4d72-94fe-07bbf066dffd.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ControleVendasAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ControleVendasAPI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Context/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Context/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/ControleVendas.db" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/ControleVendas.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/ControleVendasAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/ControleVendasAPI.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Controllers/RelatorioFinanceiroController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Controllers/RelatorioFinanceiroController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Controllers/SalesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Controllers/SalesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Controllers/SweetKitsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Controllers/SweetKitsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/AutoMapper.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/AutoMapper.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.staticwebassets.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.staticwebassets.endpoints.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Humanizer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Humanizer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.AspNetCore.Cryptography.Internal.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.AspNetCore.Cryptography.Internal.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Bcl.AsyncInterfaces.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Bcl.AsyncInterfaces.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Build.Locator.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Build.Locator.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.CodeAnalysis.CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.CodeAnalysis.CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.CodeAnalysis.Workspaces.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.CodeAnalysis.Workspaces.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.CodeAnalysis.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.CodeAnalysis.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Data.Sqlite.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Data.Sqlite.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Design.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Design.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Relational.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Relational.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Sqlite.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Sqlite.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.Caching.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.Caching.Abstractions.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.Caching.Memory.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.Caching.Memory.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.Configuration.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.Configuration.Abstractions.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.DependencyModel.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.DependencyModel.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.Identity.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.Identity.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.Identity.Stores.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.Identity.Stores.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.Logging.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.Logging.Abstractions.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.Logging.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.Logging.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.Options.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.Options.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.Primitives.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Extensions.Primitives.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.IdentityModel.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.IdentityModel.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.IdentityModel.Logging.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.IdentityModel.Logging.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.OpenApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Microsoft.OpenApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Mono.TextTemplating.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Mono.TextTemplating.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/SQLitePCLRaw.batteries_v2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/SQLitePCLRaw.batteries_v2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/SQLitePCLRaw.core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/SQLitePCLRaw.core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/SQLitePCLRaw.provider.e_sqlite3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/SQLitePCLRaw.provider.e_sqlite3.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/System.CodeDom.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/System.CodeDom.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/System.Composition.AttributedModel.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/System.Composition.AttributedModel.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/System.Composition.Convention.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/System.Composition.Convention.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/System.Composition.Hosting.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/System.Composition.Hosting.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/System.Composition.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/System.Composition.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/System.Composition.TypedParts.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/System.Composition.TypedParts.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/cs/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/cs/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/cs/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/cs/Microsoft.CodeAnalysis.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/de/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/de/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/de/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/de/Microsoft.CodeAnalysis.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/es/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/es/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/es/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/es/Microsoft.CodeAnalysis.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/fr/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/fr/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/fr/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/fr/Microsoft.CodeAnalysis.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/it/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/it/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/it/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/it/Microsoft.CodeAnalysis.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ja/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ja/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ja/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ja/Microsoft.CodeAnalysis.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ko/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ko/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ko/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ko/Microsoft.CodeAnalysis.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pl/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pl/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pl/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pl/Microsoft.CodeAnalysis.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pt-BR/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/pt-BR/Microsoft.CodeAnalysis.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ru/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ru/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ru/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ru/Microsoft.CodeAnalysis.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/browser-wasm/nativeassets/net9.0/e_sqlite3.a" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/browser-wasm/nativeassets/net9.0/e_sqlite3.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-arm/native/libe_sqlite3.so" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-arm/native/libe_sqlite3.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-arm64/native/libe_sqlite3.so" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-arm64/native/libe_sqlite3.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-armel/native/libe_sqlite3.so" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-armel/native/libe_sqlite3.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-mips64/native/libe_sqlite3.so" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-mips64/native/libe_sqlite3.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-musl-arm/native/libe_sqlite3.so" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-musl-arm/native/libe_sqlite3.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-musl-arm64/native/libe_sqlite3.so" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-musl-arm64/native/libe_sqlite3.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-musl-s390x/native/libe_sqlite3.so" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-musl-s390x/native/libe_sqlite3.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-musl-x64/native/libe_sqlite3.so" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-musl-x64/native/libe_sqlite3.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-ppc64le/native/libe_sqlite3.so" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-ppc64le/native/libe_sqlite3.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-s390x/native/libe_sqlite3.so" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-s390x/native/libe_sqlite3.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-x64/native/libe_sqlite3.so" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-x64/native/libe_sqlite3.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-x86/native/libe_sqlite3.so" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/linux-x86/native/libe_sqlite3.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/maccatalyst-arm64/native/libe_sqlite3.dylib" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/maccatalyst-arm64/native/libe_sqlite3.dylib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/maccatalyst-x64/native/libe_sqlite3.dylib" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/maccatalyst-x64/native/libe_sqlite3.dylib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/osx-arm64/native/libe_sqlite3.dylib" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/osx-arm64/native/libe_sqlite3.dylib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/osx-x64/native/libe_sqlite3.dylib" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/osx-x64/native/libe_sqlite3.dylib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/win-arm/native/e_sqlite3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/win-arm/native/e_sqlite3.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/win-arm64/native/e_sqlite3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/win-arm64/native/e_sqlite3.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/win-x64/native/e_sqlite3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/win-x64/native/e_sqlite3.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/win-x86/native/e_sqlite3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/runtimes/win-x86/native/e_sqlite3.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/tr/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/tr/Microsoft.CodeAnalysis.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/ControleVendasAPI.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/ControleVendasAPI.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/ControleVendasAPI.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/ControleVendasAPI.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/ControleVendasAPI.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/ControleVendasAPI.csproj.nuget.g.targets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ref/ControleVendasAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ref/ControleVendasAPI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/refint/ControleVendasAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/refint/ControleVendasAPI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/rjsmcshtml.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/rjsmcshtml.dswa.cache.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/rjsmrazor.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/rjsmrazor.dswa.cache.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/rpswa.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/rpswa.dswa.cache.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/staticwebassets.build.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/staticwebassets.build.endpoints.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/project.packagespec.json" afterDir="false" />
@@ -76,7 +191,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/gamer/Documents/Projeto Pessoal/Controle Vendas Api/ControleVendasAPI/ControleVendasAPI/Controllers/SalesController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ControleVendasAPI/DTOS/TokenUserDto.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -90,40 +205,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.ControleVendasAPI: http.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.ControleVendasAPI: http.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.ControleVendasAPI: http">
     <configuration name="ControleVendasAPI: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ControleVendasAPI/ControleVendasAPI.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net9.0" />
       <option name="LAUNCH_PROFILE_NAME" value="http" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
       <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
       <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
       <option name="SEND_DEBUG_REQUEST" value="1" />
       <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -132,13 +250,14 @@
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ControleVendasAPI/ControleVendasAPI.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net9.0" />
       <option name="LAUNCH_PROFILE_NAME" value="https" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
       <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
       <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
       <option name="SEND_DEBUG_REQUEST" value="1" />
       <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -173,6 +292,7 @@
       <workItem from="1771012930381" duration="736000" />
       <workItem from="1772067622082" duration="5542000" />
       <workItem from="1772320127952" duration="1332000" />
+      <workItem from="1772397474229" duration="1664000" />
     </task>
     <task id="LOCAL-00001" summary="Criando o Projeto">
       <option name="closed" value="true" />

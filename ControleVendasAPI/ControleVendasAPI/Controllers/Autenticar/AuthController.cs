@@ -1,8 +1,12 @@
-﻿using ControleVendasAPI.DTOS;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using ControleVendasAPI.DTOS;
+using ControleVendasAPI.Models;
+using ControleVendasAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ControleVendasAPI.Controllers;
+namespace ControleVendasAPI.Controllers.Autenticar;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -10,11 +14,13 @@ public class AuthController : ControllerBase
 {
     private readonly UserManager<IdentityUser> _userManager;
     private readonly SignInManager<IdentityUser> _signInManager;
+    private readonly ITokenService _tokenService;
 
-    public AuthController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+    public AuthController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, ITokenService tokenService)
     {
         _userManager = userManager;
         _signInManager = signInManager;
+        _tokenService = tokenService;
     }
 
     [HttpPost("Register")]
@@ -51,6 +57,14 @@ public class AuthController : ControllerBase
         {
             return BadRequest($"Senha incorreta!");
         }
+
+        var authClaims = new List<Claim>
+        {
+            //Claim (Informaçao do usuario) do nome dele
+            new Claim(ClaimTypes.Name, user.UserName!),
+            new Claim(ClaimTypes.Email, user.Email!),
+            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+        };
 
         return Ok("Usuario logado com sucesso, divitar-se!");
     }

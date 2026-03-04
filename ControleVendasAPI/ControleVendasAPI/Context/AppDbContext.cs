@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ControleVendasAPI.Context;
 
-public class AppDbContext : IdentityDbContext
+public class AppDbContext : IdentityDbContext<UserToken>
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
