@@ -109,25 +109,6 @@
           }
         }
       },
-      "Microsoft.AspNetCore.OpenApi/9.0.7": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.OpenApi": "1.6.17"
-        },
-        "compile": {
-          "lib/net9.0/Microsoft.AspNetCore.OpenApi.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net9.0/Microsoft.AspNetCore.OpenApi.dll": {
-            "related": ".xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
       "Microsoft.Bcl.AsyncInterfaces/7.0.0": {
         "type": "package",
         "compile": {
@@ -959,7 +940,7 @@
           }
         }
       },
-      "Microsoft.OpenApi/3.3.1": {
+      "Microsoft.OpenApi/2.4.1": {
         "type": "package",
         "dependencies": {
           "System.Text.Json": "8.0.5"
@@ -1559,22 +1540,6 @@
         "lib/net9.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml",
         "microsoft.aspnetcore.identity.entityframeworkcore.9.0.13.nupkg.sha512",
         "microsoft.aspnetcore.identity.entityframeworkcore.nuspec"
-      ]
-    },
-    "Microsoft.AspNetCore.OpenApi/9.0.7": {
-      "sha512": "8aG0mkgmA38IDJ0ca5HIpdexKjHXIh0z1kIdw5WyM6CrD4+CEt97UgSwBBBCHG6QQKV0hj2mfkwtEcqrJBcu8g==",
-      "type": "package",
-      "path": "microsoft.aspnetcore.openapi/9.0.7",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "PACKAGE.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net9.0/Microsoft.AspNetCore.OpenApi.dll",
-        "lib/net9.0/Microsoft.AspNetCore.OpenApi.xml",
-        "microsoft.aspnetcore.openapi.9.0.7.nupkg.sha512",
-        "microsoft.aspnetcore.openapi.nuspec"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/7.0.0": {
@@ -3531,10 +3496,10 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
-    "Microsoft.OpenApi/3.3.1": {
-      "sha512": "8Xo42prPRLeQpcSv9sjajQQ0o+gL7rZ4HMUsNNI47iqK+bxDrIwLOGlN9fLAlTpJk0iyXRNR51zupMt5IdhU/w==",
+    "Microsoft.OpenApi/2.4.1": {
+      "sha512": "u7QhXCISMQuab3flasb1hoaiERmUqyWsW7tmQODyILoQ7mJV5IRGM+2KKZYo0QUfC13evEOcHAb6TPWgqEQtrw==",
       "type": "package",
-      "path": "microsoft.openapi/3.3.1",
+      "path": "microsoft.openapi/2.4.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3545,7 +3510,7 @@
         "lib/netstandard2.0/Microsoft.OpenApi.dll",
         "lib/netstandard2.0/Microsoft.OpenApi.pdb",
         "lib/netstandard2.0/Microsoft.OpenApi.xml",
-        "microsoft.openapi.3.3.1.nupkg.sha512",
+        "microsoft.openapi.2.4.1.nupkg.sha512",
         "microsoft.openapi.nuspec"
       ]
     },
@@ -4174,12 +4139,9 @@
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 9.0.13",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 9.0.13",
-      "Microsoft.AspNetCore.OpenApi >= 9.0.7",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.11",
       "Microsoft.EntityFrameworkCore.Sqlite >= 9.0.11",
-      "Microsoft.OpenApi >= 3.3.1",
-      "Swashbuckle.AspNetCore >= 10.1.4",
-      "Swashbuckle.AspNetCore.SwaggerUI >= 10.1.4"
+      "Swashbuckle.AspNetCore >= 10.1.4"
     ]
   },
   "packageFolders": {
@@ -4242,10 +4204,6 @@
             "target": "Package",
             "version": "[9.0.13, )"
           },
-          "Microsoft.AspNetCore.OpenApi": {
-            "target": "Package",
-            "version": "[9.0.7, )"
-          },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
@@ -4256,15 +4214,7 @@
             "target": "Package",
             "version": "[9.0.11, )"
           },
-          "Microsoft.OpenApi": {
-            "target": "Package",
-            "version": "[3.3.1, )"
-          },
           "Swashbuckle.AspNetCore": {
-            "target": "Package",
-            "version": "[10.1.4, )"
-          },
-          "Swashbuckle.AspNetCore.SwaggerUI": {
             "target": "Package",
             "version": "[10.1.4, )"
           }

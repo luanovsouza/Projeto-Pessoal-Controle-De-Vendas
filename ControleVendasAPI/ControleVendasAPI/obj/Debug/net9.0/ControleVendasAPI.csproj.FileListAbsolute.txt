@@ -222,6 +222,8 @@ C:/Users/gamer/Documents/Projeto Pessoal/Controle Vendas Api/ControleVendasAPI/C
 /home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/bin/Debug/net9.0/SQLitePCLRaw.batteries_v2.dll
 /home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/bin/Debug/net9.0/SQLitePCLRaw.core.dll
 /home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/bin/Debug/net9.0/SQLitePCLRaw.provider.e_sqlite3.dll
+/home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
+/home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/bin/Debug/net9.0/System.CodeDom.dll
 /home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/bin/Debug/net9.0/System.Composition.AttributedModel.dll
@@ -340,5 +342,3 @@ C:/Users/gamer/Documents/Projeto Pessoal/Controle Vendas Api/ControleVendasAPI/C
 /home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.pdb
 /home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.genruntimeconfig.cache
 /home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/obj/Debug/net9.0/ref/ControleVendasAPI.dll
-/home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
-/home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll

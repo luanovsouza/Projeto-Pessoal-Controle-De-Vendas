@@ -1,12 +1,11 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using ControleVendasAPI.DTOS;
-using ControleVendasAPI.Models;
 using ControleVendasAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ControleVendasAPI.Controllers.Autenticar;
+namespace ControleVendasAPI.Controllers.Auth;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -66,6 +65,9 @@ public class AuthController : ControllerBase
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
         };
 
-        return Ok("Usuario logado com sucesso, divitar-se!");
+        var token = _tokenService.GerarToken(dto);
+        var refreshToken = _tokenService.GerarRefreshToken();
+
+        return Ok($"{token},  {refreshToken}");
     }
 }

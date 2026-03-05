@@ -26,5 +26,10 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
+    <data-source name="ControleVendas [2]" uuid="d035a20f-1652-4df3-bd8a-233b2b552b1b">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" />
+      <auth-provider>no-auth</auth-provider>
+      <schema-mapping />
+    </data-source>
   </component>
 </project>
