@@ -11,8 +11,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ControleVendasAPI.Controllers;
 
+[Authorize]
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 
 public class SalesController : ControllerBase
 {

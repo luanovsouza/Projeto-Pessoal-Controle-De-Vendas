@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ControleVendasAPI.Controllers.Auth;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class AuthController : ControllerBase
 {
     private readonly UserManager<UserToken> _userManager;
@@ -23,8 +23,7 @@ public class AuthController : ControllerBase
         _tokenService = tokenService;
     }
     
-    [Authorize]
-    [HttpPost("Register")]
+    [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] LoginDto dto)
     {   
         //Criando o objeto do usuario
@@ -45,7 +44,7 @@ public class AuthController : ControllerBase
     }
 
 
-    [HttpPost("Login")]
+    [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginDto dto)
     {
         var user = await _userManager.FindByEmailAsync(dto.Email!);
@@ -64,7 +63,7 @@ public class AuthController : ControllerBase
 
         var token = _tokenService.GerarToken(user);
 
-        await _userManager.UpdateAsync(user);
+        //await _userManager.UpdateAsync(user);
 
         return Ok(new
         {

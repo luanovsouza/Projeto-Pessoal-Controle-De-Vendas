@@ -22,44 +22,43 @@ builder.Services.AddControllers();
 
 var secrectKey = builder.Configuration["JWT:SecretKey"] ?? throw new InvalidOperationException("JWT:SecretKey não configurada");
 
+
+builder.Services
+    .AddIdentityCore<UserToken>()
+    .AddRoles<IdentityRole>()
+    .AddSignInManager()
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultTokenProviders();
+
 builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;//É como se fosse, "Minha aplicação usa
-    //autenicação e o tipo padrao é JWT Bearer
-    options.DefaultChallengeScheme =
-        JwtBearerDefaults
-            .AuthenticationScheme; // Isso significa que por padrao o sisttema de autenticação, vai usar token
-}).AddJwtBearer(options =>
-{
-    options.SaveToken = true;//Significa se o token deve ser salvo apos uma autenticaçao bem sucedida
-    options.RequireHttpsMetadata = false; //Indica se é preciso HTTPS para transmitir o token OBS: Em produção deve ser true
-    
-    //Classe que permite configurar os parametros de validaçao do token
-
-    options.TokenValidationParameters = new TokenValidationParameters()
     {
-        //Siginifica, configurações, validar a validade do Emissor da audiencia e o tempo de vida do token
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidateLifetime = true,
-        
-        //Vai validar a assinatura de chave do emissor
-        ValidateIssuerSigningKey = true,
-        
-        //Permite ajustar o tempo entre o servidor de autenticação e aplicaçao
-        ClockSkew = TimeSpan.Zero,
-        
-        //Os dois esta sendo atribuido o valor de audiencia e emissor
-        ValidAudience = builder.Configuration["JWT:Audience"],
-        ValidIssuer = builder.Configuration["JWT:Issuer"],
-        
-        //Gerando a chave, usando a chave simetrica usando a secrectkey
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secrectKey))
-    };
-});
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddJwtBearer(options =>
+    {
+        options.SaveToken = true;
+        options.RequireHttpsMetadata = false;
 
-builder.Services.AddIdentity<UserToken, IdentityRole>().AddEntityFrameworkStores<AppDbContext>()
-    .AddDefaultTokenProviders();//Provedor de token padrao pra criar operaçoes relacionadas a autenticação
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ClockSkew = TimeSpan.Zero,
+            ValidAudience = builder.Configuration["JWT:Audience"],
+            ValidIssuer = builder.Configuration["JWT:Issuer"],
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(secrectKey))
+        };
+    });
+
+
+
+// builder.Services.AddIdentity<UserToken, IdentityRole>().AddEntityFrameworkStores<AppDbContext>()
+//     .AddDefaultTokenProviders();//Provedor de token padrao pra criar operaçoes relacionadas a autenticação
+
 
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -102,8 +101,8 @@ else
     app.UseHttpsRedirection(); // Só força HTTPS em produção
 }
 
-app.UseAuthentication();
 app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
