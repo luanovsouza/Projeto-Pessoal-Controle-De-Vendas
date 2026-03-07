@@ -20,9 +20,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 
-var secrectKey = builder.Configuration["JWT:SecretKey"] ?? throw new InvalidOperationException("JWT:SecretKey não configurada");
+var secrectKey = builder.Configuration["JWT:SecretKey"] ?? throw new InvalidOperationException("SecretKey não configurada");
 
-
+//Configurações de autenticação
 builder.Services
     .AddIdentityCore<UserToken>()
     .AddRoles<IdentityRole>()
@@ -30,6 +30,7 @@ builder.Services
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
+//Configurações de autenticação JWT
 builder.Services.AddAuthentication(options =>
     {
         options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -54,12 +55,10 @@ builder.Services.AddAuthentication(options =>
         };
     });
 
-
-
-// builder.Services.AddIdentity<UserToken, IdentityRole>().AddEntityFrameworkStores<AppDbContext>()
-//     .AddDefaultTokenProviders();//Provedor de token padrao pra criar operaçoes relacionadas a autenticação
-
-
+builder.Services.AddAuthorization(opt =>
+{
+    opt.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+});
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 

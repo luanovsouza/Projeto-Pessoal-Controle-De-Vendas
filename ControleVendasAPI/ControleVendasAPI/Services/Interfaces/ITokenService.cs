@@ -6,7 +6,7 @@ namespace ControleVendasAPI.Services.Interfaces;
 
 public interface ITokenService
 {
-    public TokenUserDto GerarToken(UserToken user);
+    public Task<TokenUserDto> GerarToken(UserToken user);
     public string GerarRefreshToken();
     public ClaimsPrincipal GetPrincipalFromExpiredToken(string token);
     

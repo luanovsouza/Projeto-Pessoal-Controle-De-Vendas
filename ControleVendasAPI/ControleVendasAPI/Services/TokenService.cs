@@ -5,6 +5,7 @@ using System.Text;
 using ControleVendasAPI.DTOS;
 using ControleVendasAPI.Models;
 using ControleVendasAPI.Services.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 
 namespace ControleVendasAPI.Services;
@@ -12,28 +13,40 @@ namespace ControleVendasAPI.Services;
 public class TokenService : ITokenService
 {
     private readonly IConfiguration _config;
+    private readonly UserManager<UserToken> _userManager;
 
-    public TokenService(IConfiguration config)
+    public TokenService(IConfiguration config, UserManager<UserToken> userManager)
     {
         _config = config;
+        _userManager = userManager;
     }
 
     
-    public TokenUserDto GerarToken(UserToken user)
+    public async Task<TokenUserDto> GerarToken(UserToken user)
     {
         try
         {
             var key = _config["JWT:SecretKey"];
             if (string.IsNullOrEmpty(key))
                 throw new InvalidOperationException("JWT:SecretKey não configurada");
-
-            var claims = new[]
+            
+            var roles = await _userManager.GetRolesAsync(user);
+            //Obtendo as roles do usuario
+            
+            //Lista de claims pq o usuario pode ter varias roles
+            var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Name, user.UserName!),
                 new Claim(ClaimTypes.Email, user.Email!),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
+
+            foreach (var role in roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
+            // Adicionando as roles como claims para o token
             
             var chavePrivada = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key!));
             var credentials = new SigningCredentials(chavePrivada, SecurityAlgorithms.HmacSha256);
@@ -53,6 +66,8 @@ public class TokenService : ITokenService
             // Salvar refresh token no usuário
             user.RefreshToken = refreshToken;
             user.Expiracao = expiracao;
+            
+
             
             return new TokenUserDto()
             {

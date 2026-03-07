@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ControleVendasAPI.Controllers.Auth;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("[controller]")]
 public class AuthController : ControllerBase
 {
     private readonly UserManager<UserToken> _userManager;
@@ -63,7 +63,7 @@ public class AuthController : ControllerBase
 
         var token = _tokenService.GerarToken(user);
 
-        //await _userManager.UpdateAsync(user);
+        await _userManager.UpdateAsync(user);
 
         return Ok(new
         {
@@ -72,13 +72,13 @@ public class AuthController : ControllerBase
         });
     }
 
-
+    
+    [Authorize(Roles = "AdminOnly")]
     [HttpPost("RefreshToken")]
     public async Task<IActionResult> RefreshToken([FromBody] TokenUserDto tokenUserDto)
     {
         if (tokenUserDto is null)
             return BadRequest("Invalid client request");
-
 
         var acessToken = tokenUserDto.Token; //Pegando o token de acesso do cliente
         var refreshToken = tokenUserDto.RefreshToken; //Pegando o refresh token do cliente
