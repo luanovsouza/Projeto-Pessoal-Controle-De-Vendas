@@ -184,7 +184,6 @@ C:/Users/gamer/Documents/Projeto Pessoal/Controle Vendas Api/ControleVendasAPI/C
 /home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/bin/Debug/net9.0/Microsoft.AspNetCore.Cryptography.Internal.dll
 /home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/bin/Debug/net9.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 /home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/bin/Debug/net9.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-/home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll
 /home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Bcl.AsyncInterfaces.dll
 /home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/bin/Debug/net9.0/Microsoft.Build.Locator.dll
 /home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/bin/Debug/net9.0/Microsoft.CodeAnalysis.dll

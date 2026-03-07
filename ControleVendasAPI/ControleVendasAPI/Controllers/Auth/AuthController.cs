@@ -1,6 +1,5 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using ControleVendasAPI.DTOS;
+﻿using ControleVendasAPI.DTOS;
+using ControleVendasAPI.Models;
 using ControleVendasAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -8,14 +7,14 @@ using Microsoft.AspNetCore.Mvc;
 namespace ControleVendasAPI.Controllers.Auth;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("[controller]")]
 public class AuthController : ControllerBase
 {
-    private readonly UserManager<IdentityUser> _userManager;
-    private readonly SignInManager<IdentityUser> _signInManager;
+    private readonly UserManager<UserToken> _userManager;
+    private readonly SignInManager<UserToken> _signInManager;
     private readonly ITokenService _tokenService;
 
-    public AuthController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, ITokenService tokenService)
+    public AuthController(UserManager<UserToken> userManager, SignInManager<UserToken> signInManager, ITokenService tokenService)
     {
         _userManager = userManager;
         _signInManager = signInManager;
@@ -26,7 +25,7 @@ public class AuthController : ControllerBase
     public async Task<IActionResult> Register([FromBody] LoginDto dto)
     {   
         //Criando o objeto do usuario
-        var user = new IdentityUser { UserName = dto.Email, Email = dto.Email };
+        var user = new UserToken { UserName = dto.Email, Email = dto.Email };
         
         //Criando o usuario no banco de dados
         var newUser = await _userManager.CreateAsync(user, dto.Senha!);
@@ -36,7 +35,10 @@ public class AuthController : ControllerBase
             return BadRequest(newUser.Errors);
         }
 
-        return Ok("Usuario registrado com sucesso!");
+        return Ok(new
+        {
+            Mensagem = "Usuario registrado com sucesso",
+        });
     }
 
 
@@ -49,7 +51,7 @@ public class AuthController : ControllerBase
         {
             return BadRequest("Email Incorreto!");
         }
-        
+
         var result = await _signInManager.CheckPasswordSignInAsync(user, dto.Senha!, false).ConfigureAwait(false);
 
         if (!result.Succeeded)
@@ -57,17 +59,13 @@ public class AuthController : ControllerBase
             return BadRequest($"Senha incorreta!");
         }
 
-        var authClaims = new List<Claim>
-        {
-            //Claim (Informaçao do usuario) do nome dele
-            new Claim(ClaimTypes.Name, user.UserName!),
-            new Claim(ClaimTypes.Email, user.Email!),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-        };
-
-        var token = _tokenService.GerarToken(dto);
+        var token = _tokenService.GerarToken(user);
         var refreshToken = _tokenService.GerarRefreshToken();
 
-        return Ok($"{token},  {refreshToken}");
+        return Ok(new
+        {
+            Mensagem = "Usuario logado com sucesso",
+            Token = token,
+        });
     }
 }

@@ -15,20 +15,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAuthorization();
+builder.Services.AddControllers();
 
-
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
-builder.Services.AddDbContext<AppDbContext>(options =>
-{
-    options.UseSqlite(connectionString);
-});
-
-var secrectKey = builder.Configuration.GetSection("JWT").GetValue<string>("SecretKey");
+var secrectKey = builder.Configuration["JWT:SecretKey"] ?? throw new InvalidOperationException("JWT:SecretKey não configurada");
 
 builder.Services.AddAuthentication(options =>
 {
@@ -58,13 +50,26 @@ builder.Services.AddAuthentication(options =>
         ClockSkew = TimeSpan.Zero,
         
         //Os dois esta sendo atribuido o valor de audiencia e emissor
-        ValidAudience = builder.Configuration["JWT:ValidAudience"],
-        ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
+        ValidAudience = builder.Configuration["JWT:Audience"],
+        ValidIssuer = builder.Configuration["JWT:Issuer"],
         
         //Gerando a chave, usando a chave simetrica usando a secrectkey
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secrectKey!))
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secrectKey))
     };
 });
+
+builder.Services.AddIdentity<UserToken, IdentityRole>().AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultTokenProviders();//Provedor de token padrao pra criar operaçoes relacionadas a autenticação
+
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+    options.UseSqlite(connectionString);
+});
+
+
 
 //Repositorios
 builder.Services.AddScoped<ISalesRepository, SaleRepository>();
@@ -74,28 +79,35 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 //Serviços
 builder.Services.AddScoped<IRelatorioFinanceiroDto, RelatorioFinanceiroDtoService>();
-builder.Services.AddIdentity<UserToken, IdentityRole>().AddEntityFrameworkStores<AppDbContext>()
-    .AddDefaultTokenProviders();//Provedor de token padrao pra criar operaçoes relacionadas a autenticação
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 
 //Mapeamentos
 builder.Services.AddAutoMapper(typeof(SalesDtoMapping));
 builder.Services.AddAutoMapper(typeof(SweetKitDtoMapping));
 
-//Autenticaçao
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+if(app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "Api Vendas");
+    });
+}
+else
+{
+    app.UseHttpsRedirection(); // Só força HTTPS em produção
+}
 
-app.UseSwagger();
-
-app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json", "Api Vendas"));
-
-
-app.UseHttpsRedirection();
 app.UseAuthentication();
+app.UseRouting();
 app.UseAuthorization();
+app.UseEndpoints(endpoints => {
+    endpoints.MapControllers();
+});
 app.MapControllers();
 app.Run();

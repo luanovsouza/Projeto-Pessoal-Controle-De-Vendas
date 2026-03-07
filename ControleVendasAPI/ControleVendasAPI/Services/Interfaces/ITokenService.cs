@@ -1,10 +1,13 @@
 using System.Security.Claims;
 using ControleVendasAPI.DTOS;
+using ControleVendasAPI.Models;
 
 namespace ControleVendasAPI.Services.Interfaces;
 
 public interface ITokenService
 {
-    public TokenUserDto GerarToken(LoginDto loginDto);
+    public TokenUserDto GerarToken(UserToken user);
     public string GerarRefreshToken();
+    public ClaimsPrincipal GetPrincipalFromExpiredToken(string token);
+    
 }

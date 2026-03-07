@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore;
 namespace ControleVendasAPI.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
-//[Authorize]
+[Route("[controller]")]
+[Authorize]
 public class SalesController : ControllerBase
 {
     private readonly IUnitOfWork _uof;
@@ -36,7 +36,7 @@ public class SalesController : ControllerBase
     }
 
 
-    [HttpGet("/api/SalesPagination")]
+    [HttpGet("SalesPagination")]
     public ActionResult<IEnumerable<SaleDto>> GetSalesPagination([FromQuery] SalesParameters saleParameters)
     {
         var sales = _uof.SalesRepository.GetSales(saleParameters);
