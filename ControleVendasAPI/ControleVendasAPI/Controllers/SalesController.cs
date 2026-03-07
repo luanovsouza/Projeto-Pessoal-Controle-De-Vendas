@@ -13,7 +13,7 @@ namespace ControleVendasAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-[Authorize]
+
 public class SalesController : ControllerBase
 {
     private readonly IUnitOfWork _uof;
@@ -24,6 +24,7 @@ public class SalesController : ControllerBase
         _uof = uof;
         _mapper = mapper;
     }
+    
 
     [HttpGet]
     public ActionResult<IEnumerable<SaleDto>> GetSales()

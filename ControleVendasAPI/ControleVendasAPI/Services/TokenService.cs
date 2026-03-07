@@ -50,6 +50,10 @@ public class TokenService : ITokenService
             
             var refreshToken = GerarRefreshToken();
             
+            // Salvar refresh token no usuário
+            user.RefreshToken = refreshToken;
+            user.Expiracao = expiracao;
+            
             return new TokenUserDto()
             {
                 Token = new JwtSecurityTokenHandler().WriteToken(token),
@@ -89,6 +93,12 @@ public class TokenService : ITokenService
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey!)),
             ValidateLifetime = false
         };
+        
+        //ValidateAudience = false: Não valida se o público (audience) do token corresponde ao esperado.
+        // ValidateIssuer = false: Não valida se o emissor (issuer) do token é o correto.
+        // ValidateIssuerSigningKey = true: Valida se a chave de assinatura do emissor é válida.
+        // IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey!)): Define a chave simétrica usada para verificar a assinatura do token.
+        // ValidateLifetime = false: Não valida se o token expirou (útil para tokens expirados, como no refresh).
         
         var tokenHandler = new JwtSecurityTokenHandler();
         

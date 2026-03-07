@@ -1,6 +1,8 @@
-﻿using ControleVendasAPI.DTOS;
+﻿using System.IdentityModel.Tokens.Jwt;
+using ControleVendasAPI.DTOS;
 using ControleVendasAPI.Models;
 using ControleVendasAPI.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,7 +22,8 @@ public class AuthController : ControllerBase
         _signInManager = signInManager;
         _tokenService = tokenService;
     }
-
+    
+    [Authorize]
     [HttpPost("Register")]
     public async Task<IActionResult> Register([FromBody] LoginDto dto)
     {   
@@ -60,12 +63,70 @@ public class AuthController : ControllerBase
         }
 
         var token = _tokenService.GerarToken(user);
-        var refreshToken = _tokenService.GerarRefreshToken();
+
+        await _userManager.UpdateAsync(user);
 
         return Ok(new
         {
             Mensagem = "Usuario logado com sucesso",
             Token = token,
         });
+    }
+
+
+    [HttpPost("RefreshToken")]
+    public async Task<IActionResult> RefreshToken([FromBody] TokenUserDto tokenUserDto)
+    {
+        if (tokenUserDto is null)
+            return BadRequest("Invalid client request");
+
+
+        var acessToken = tokenUserDto.Token; //Pegando o token de acesso do cliente
+        var refreshToken = tokenUserDto.RefreshToken; //Pegando o refresh token do cliente
+
+        var principal = _tokenService.GetPrincipalFromExpiredToken(acessToken!);
+        //Chamando o m[etodo para obter as claims do token de acesso expirado, para validar o refresh token
+        //e gerar um novo token de acesso
+
+        if (principal is null)
+            return BadRequest();
+
+        var username = principal.Identity!.Name;
+        // Buscando o nome do usuario nas claims
+
+        var user = await _userManager.FindByNameAsync(username!);
+        // Buscando o usuario no banco de dados
+
+        if (user is null || user.RefreshToken != refreshToken ||
+            user.Expiracao <= DateTime.UtcNow)
+            return BadRequest("Invalid client request");
+
+        var newAcessToken = _tokenService.GerarToken(user);
+        var newRefreshToken = _tokenService.GerarRefreshToken();
+
+        user.RefreshToken = newRefreshToken;
+        await _userManager.UpdateAsync(user);
+
+        return Ok(new
+        {
+            Token = newAcessToken,
+            RefreshToken = newRefreshToken
+        });
+
+        
+    }
+    
+    [Authorize]
+    [HttpPost("Revoke/{username}")]
+    public async Task<IActionResult> Revoke(string username)
+    {
+        var user = await _userManager.FindByEmailAsync(username);
+        
+        if (user is null)
+            return BadRequest("Usuario não encontrado!");
+        
+        user.RefreshToken = null;
+        await _userManager.UpdateAsync(user);
+        return NoContent();
     }
 }

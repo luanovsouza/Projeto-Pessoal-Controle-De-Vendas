@@ -70,7 +70,6 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 
 
-
 //Repositorios
 builder.Services.AddScoped<ISalesRepository, SaleRepository>();
 builder.Services.AddScoped<ISweetKitRepository, SweetKitRepository>();
@@ -106,8 +105,5 @@ else
 app.UseAuthentication();
 app.UseRouting();
 app.UseAuthorization();
-app.UseEndpoints(endpoints => {
-    endpoints.MapControllers();
-});
 app.MapControllers();
 app.Run();
