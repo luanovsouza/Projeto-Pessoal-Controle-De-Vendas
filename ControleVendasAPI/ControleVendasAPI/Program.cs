@@ -67,7 +67,6 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(connectionString);
 });
 
-
 //Repositorios
 builder.Services.AddScoped<ISalesRepository, SaleRepository>();
 builder.Services.AddScoped<ISweetKitRepository, SweetKitRepository>();
@@ -87,17 +86,18 @@ builder.Services.AddAutoMapper(typeof(SweetKitDtoMapping));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if(app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI(options =>
     {
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "Api Vendas");
     });
+    app.UseHttpsRedirection(); // Só força HTTPS em produção
+
 }
 else
 {
-    app.UseHttpsRedirection(); // Só força HTTPS em produção
 }
 
 app.UseRouting();

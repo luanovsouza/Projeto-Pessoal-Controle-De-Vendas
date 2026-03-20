@@ -2,8 +2,6 @@
 using ControleVendasAPI.Models;
 using ControleVendasAPI.Pagination;
 using ControleVendasAPI.Repositories.Interfaces;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace ControleVendasAPI.Repositories;
 
@@ -17,7 +15,7 @@ public class SaleRepository : Repository<Sale>, ISalesRepository
     public PagedList<Sale> GetSales(SalesParameters saleParameters)
     {
         var sales = GetAll().OrderBy(sl => sl.Id).AsQueryable();
-        var salesOrdenados = PagedList<Sale>.ToPagedList(sales, saleParameters.pageNumber,  saleParameters.PageSize);
+        var salesOrdenados = PagedList<Sale>.ToPagedList(sales, saleParameters.pageNumber, saleParameters.PageSize);
         return salesOrdenados;
     }
 }

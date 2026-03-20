@@ -25,7 +25,8 @@ public class SalesController : ControllerBase
         _uof = uof;
         _mapper = mapper;
     }
-    
+
+
 
     [HttpGet]
     public ActionResult<IEnumerable<SaleDto>> GetSales()
@@ -83,9 +84,9 @@ public class SalesController : ControllerBase
             return BadRequest("Invalid data!");
 
         var sale = _mapper.Map<Sale>(saleDto);
-        
+
         sale.SalePriceUnit = PriceConstants.KitSalePrice;
-        
+
         var saleCreated = _uof.SalesRepository.Create(sale);
         await _uof.Commit();
 

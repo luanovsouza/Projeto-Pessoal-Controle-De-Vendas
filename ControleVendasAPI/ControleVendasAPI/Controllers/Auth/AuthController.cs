@@ -22,13 +22,13 @@ public class AuthController : ControllerBase
         _signInManager = signInManager;
         _tokenService = tokenService;
     }
-    
+
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] LoginDto dto)
-    {   
+    {
         //Criando o objeto do usuario
         var user = new UserToken { UserName = dto.Email, Email = dto.Email };
-        
+
         //Criando o usuario no banco de dados
         var newUser = await _userManager.CreateAsync(user, dto.Senha!);
 
@@ -63,6 +63,7 @@ public class AuthController : ControllerBase
 
         var token = _tokenService.GerarToken(user);
 
+        //Criando o Refresh token no meu banco de dados
         await _userManager.UpdateAsync(user);
 
         return Ok(new
@@ -72,7 +73,7 @@ public class AuthController : ControllerBase
         });
     }
 
-    
+
     [Authorize(Roles = "AdminOnly")]
     [HttpPost("RefreshToken")]
     public async Task<IActionResult> RefreshToken([FromBody] TokenUserDto tokenUserDto)
@@ -112,18 +113,18 @@ public class AuthController : ControllerBase
             RefreshToken = newRefreshToken
         });
 
-        
+
     }
-    
+
     [Authorize]
     [HttpPost("Revoke/{username}")]
     public async Task<IActionResult> Revoke(string username)
     {
         var user = await _userManager.FindByEmailAsync(username);
-        
+
         if (user is null)
             return BadRequest("Usuario não encontrado!");
-        
+
         user.RefreshToken = null;
         await _userManager.UpdateAsync(user);
         return NoContent();

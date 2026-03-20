@@ -28,6 +28,7 @@ public class RelatorioFinanceiroController : ControllerBase
     {
         var buscarId = _unitOfWork.SalesRepository.GetById(bd => bd.Id == vendaId);
 
+        
         if (vendaId != buscarId.Id )
         {
             return NotFound("Id nao foi encontrado!");

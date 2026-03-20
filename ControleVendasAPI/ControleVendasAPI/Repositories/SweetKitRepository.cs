@@ -7,6 +7,6 @@ namespace ControleVendasAPI.Repositories;
 
 public class SweetKitRepository : Repository<SweetKit>, ISweetKitRepository
 {
-    public SweetKitRepository(AppDbContext context) : base(context){}
+    public SweetKitRepository(AppDbContext context) : base(context) { }
 
 }
