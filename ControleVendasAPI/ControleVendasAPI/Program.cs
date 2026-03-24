@@ -55,6 +55,7 @@ builder.Services.AddAuthentication(options =>
         };
     });
 
+//Criando a Role de Admin
 builder.Services.AddAuthorization(opt =>
 {
     opt.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
@@ -95,9 +96,6 @@ if (app.Environment.IsDevelopment())
     });
     app.UseHttpsRedirection(); // Só força HTTPS em produção
 
-}
-else
-{
 }
 
 app.UseRouting();

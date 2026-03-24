@@ -8,7 +8,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81a01fce-0265-4a22-9dfb-d9fdad0ed124" name="Changes" comment="" />
+    <list default="true" id="81a01fce-0265-4a22-9dfb-d9fdad0ed124" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ControleVendasAPI/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ControleVendasAPI/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ControleVendasAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ControleVendasAPI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Controllers/Auth/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Controllers/Auth/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/bin/Debug/net9.0/ControleVendasAPI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/ControleVendasAPI.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/ControleVendasAPI.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ControleVendasAPI.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ref/ControleVendasAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/ref/ControleVendasAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/refint/ControleVendasAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/Debug/net9.0/refint/ControleVendasAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControleVendasAPI/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ControleVendasAPI/obj/rider.project.restore.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,32 +69,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.ControleVendasAPI: http.executor": "Run",
-    ".NET Launch Settings Profile.ControleVendasAPI: https.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/souzza/Documentos/Exercicios/GerarToken",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.ControleVendasAPI: http.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.ControleVendasAPI: https.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/souzza/Documentos/Api Catalogo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.ControleVendasAPI: https">
     <configuration name="ControleVendasAPI: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ControleVendasAPI/ControleVendasAPI.csproj" />
@@ -143,6 +163,10 @@
       <workItem from="1772738029712" duration="5361000" />
       <workItem from="1772743784501" duration="2488000" />
       <workItem from="1772912796850" duration="14409000" />
+      <workItem from="1774379693894" duration="919000" />
+      <workItem from="1774381202748" duration="105000" />
+      <workItem from="1774381364041" duration="1281000" />
+      <workItem from="1774390407694" duration="897000" />
     </task>
     <task id="LOCAL-00001" summary="Criando o Projeto">
       <option name="closed" value="true" />
@@ -325,6 +349,10 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

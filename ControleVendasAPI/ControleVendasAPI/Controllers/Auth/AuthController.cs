@@ -15,6 +15,7 @@ public class AuthController : ControllerBase
     private readonly UserManager<UserToken> _userManager;
     private readonly SignInManager<UserToken> _signInManager;
     private readonly ITokenService _tokenService;
+    private readonly RoleManager<IdentityRole> _roleManager;
 
     public AuthController(UserManager<UserToken> userManager, SignInManager<UserToken> signInManager, ITokenService tokenService)
     {
@@ -23,6 +24,62 @@ public class AuthController : ControllerBase
         _tokenService = tokenService;
     }
 
+
+    [HttpPost("create-role")]
+    public async Task<IActionResult> CreateRole([FromBody] string roleName)
+    {
+        var roleExist = await _roleManager.RoleExistsAsync(roleName);
+
+        if (!roleExist)
+        {
+            var result = await _roleManager.CreateAsync(new IdentityRole(roleName));
+
+            if (result.Succeeded)
+            {
+                return Ok(new
+                {
+                    message = $"Role '{roleName}' criada com sucesso!"
+                });
+            }
+
+            return BadRequest($"Ocorreu um erro ao criar a role '{roleName}'!");
+        }
+
+        return BadRequest(new
+        {
+            ErroMessage = $"Role '{roleName}' já existe!"
+        });
+    }
+
+    [HttpPost("CreateUserToRole")]
+    public async Task<IActionResult> CreateUserToRole([FromBody] string userName, [FromBody] string roleName)
+    {
+        var user = await _userManager.FindByNameAsync(userName);
+
+        if (user is null)
+        {
+            return NotFound(new
+            {
+                ErroMessage = "Usuario não encontrado!"
+            });
+        }
+        
+        var result = await _userManager.AddToRoleAsync(user, roleName);
+
+        if (result.Succeeded)
+        {
+            return Ok(new
+            {
+                Message = $"Role '{roleName}' atribuida ao usuario '{userName}' com sucesso!"
+            });
+        }
+
+        return BadRequest(new
+        {
+            ErroMessage = $"Ocorreu um erro ao atribuir a role '{roleName}' ao usuario '{userName}'!"
+        });
+    }
+    
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] LoginDto dto)
     {
@@ -74,7 +131,7 @@ public class AuthController : ControllerBase
     }
 
 
-    [Authorize(Roles = "AdminOnly")]
+
     [HttpPost("RefreshToken")]
     public async Task<IActionResult> RefreshToken([FromBody] TokenUserDto tokenUserDto)
     {
