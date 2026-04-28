@@ -17,11 +17,12 @@ public class AuthController : ControllerBase
     private readonly ITokenService _tokenService;
     private readonly RoleManager<IdentityRole> _roleManager;
 
-    public AuthController(UserManager<UserToken> userManager, SignInManager<UserToken> signInManager, ITokenService tokenService)
+    public AuthController(UserManager<UserToken> userManager, SignInManager<UserToken> signInManager, ITokenService tokenService, RoleManager<IdentityRole> roleManager)
     {
         _userManager = userManager;
         _signInManager = signInManager;
         _tokenService = tokenService;
+        _roleManager = roleManager;
     }
 
 
@@ -30,29 +31,38 @@ public class AuthController : ControllerBase
     {
         var roleExist = await _roleManager.RoleExistsAsync(roleName);
 
-        if (!roleExist)
+        try
         {
-            var result = await _roleManager.CreateAsync(new IdentityRole(roleName));
-
-            if (result.Succeeded)
+            if (!roleExist)
             {
-                return Ok(new
+                var result = await _roleManager.CreateAsync(new IdentityRole(roleName));
+
+                if (result.Succeeded)
                 {
-                    message = $"Role '{roleName}' criada com sucesso!"
-                });
+                    return Ok(new
+                    {
+                        message = $"Role '{roleName}' criada com sucesso!"
+                    });
+                }
+
+                return BadRequest($"Ocorreu um erro ao criar a role '{roleName}'!");
             }
 
-            return BadRequest($"Ocorreu um erro ao criar a role '{roleName}'!");
+            return BadRequest(new
+            {
+                ErroMessage = $"Role '{roleName}' já existe!"
+            });
         }
-
-        return BadRequest(new
+        catch (Exception e)
         {
-            ErroMessage = $"Role '{roleName}' já existe!"
-        });
+            Console.WriteLine(e);
+            throw;
+        }
+        
     }
 
     [HttpPost("CreateUserToRole")]
-    public async Task<IActionResult> CreateUserToRole([FromBody] string userName, [FromBody] string roleName)
+    public async Task<IActionResult> CreateUserToRole(string userName, string roleName)
     {
         var user = await _userManager.FindByNameAsync(userName);
 
@@ -126,7 +136,7 @@ public class AuthController : ControllerBase
         return Ok(new
         {
             Mensagem = "Usuario logado com sucesso",
-            Token = token,
+            Token = token
         });
     }
 
@@ -142,7 +152,7 @@ public class AuthController : ControllerBase
         var refreshToken = tokenUserDto.RefreshToken; //Pegando o refresh token do cliente
 
         var principal = _tokenService.GetPrincipalFromExpiredToken(acessToken!);
-        //Chamando o m[etodo para obter as claims do token de acesso expirado, para validar o refresh token
+        //Chamando o método para obter as claims do token de acesso expirado, para validar o refresh token
         //e gerar um novo token de acesso
 
         if (principal is null)
@@ -173,7 +183,7 @@ public class AuthController : ControllerBase
 
     }
 
-    [Authorize]
+    [Authorize(Policy = "AdminOnly")]
     [HttpPost("Revoke/{username}")]
     public async Task<IActionResult> Revoke(string username)
     {

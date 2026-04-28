@@ -55,10 +55,32 @@ builder.Services.AddAuthentication(options =>
         };
     });
 
+
 //Criando a Role de Admin
 builder.Services.AddAuthorization(opt =>
 {
+    //Criando a Politica de Admin, e exigindo que o usuario tem que ter o perfil admin para acessar o conteudo protegido chamado
+    //AdminONly
     opt.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+
+    opt.AddPolicy("UserOnly", policy => policy.RequireRole("User"));
+});
+
+//Configurando o Cors
+//
+
+//Nome da politica
+var OrigensComAcessoPermitido = "_origensComAcessoPermitido";
+
+//Adicionando o CORS
+builder.Services.AddCors(opt =>
+{                       //Nome da politica
+    opt.AddPolicy(name: OrigensComAcessoPermitido,
+        policy =>
+        {
+            policy.WithOrigins("https://apirequest.io");
+        });
+
 });
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -67,6 +89,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlite(connectionString);
 });
+
 
 //Repositorios
 builder.Services.AddScoped<ISalesRepository, SaleRepository>();
@@ -97,8 +120,10 @@ if (app.Environment.IsDevelopment())
     app.UseHttpsRedirection(); // Só força HTTPS em produção
 
 }
-
+app.UseStaticFiles();
 app.UseRouting();
+
+app.UseCors(OrigensComAcessoPermitido);
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();

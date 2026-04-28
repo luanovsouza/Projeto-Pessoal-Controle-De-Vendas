@@ -26,9 +26,8 @@ public class SalesController : ControllerBase
         _mapper = mapper;
     }
 
-
-
     [HttpGet]
+    [Authorize(Policy = "User")]
     public ActionResult<IEnumerable<SaleDto>> GetSales()
     {
         var sales = _uof.SalesRepository.GetAll();
@@ -117,6 +116,7 @@ public class SalesController : ControllerBase
     }
 
     [HttpDelete("{id:int:min(1)}")]
+    [Authorize(Policy = "Admin")]
     public async Task<ActionResult<Sale>> DeleteSale(int id)
     {
         var saleById = _uof.SalesRepository.GetById(c => c.Id == id);

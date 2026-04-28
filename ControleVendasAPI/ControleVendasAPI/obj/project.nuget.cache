@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gixtIygfgII=",
+  "dgSpecHash": "ERx6mNb+cdA=",
   "success": true,
   "projectFilePath": "/home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/ControleVendasAPI.csproj",
   "expectedPackageFiles": [
@@ -78,10 +78,8 @@
     {
       "code": "NU1903",
       "level": "Warning",
-      "message": "Package 'AutoMapper' 12.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-rvv3-g6hj-g44x",
-      "projectPath": "/home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/ControleVendasAPI.csproj",
       "warningLevel": 1,
-      "filePath": "/home/souzza/Documentos/Projeto Pessoal/Projeto-Pessoal-Controle-De-Vendas/ControleVendasAPI/ControleVendasAPI/ControleVendasAPI.csproj",
+      "message": "Package 'AutoMapper' 12.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-rvv3-g6hj-g44x",
       "libraryId": "AutoMapper",
       "targetGraphs": [
         "net9.0"
